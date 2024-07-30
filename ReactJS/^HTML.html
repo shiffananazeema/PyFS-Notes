@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements Example</title>
+</head>
+
+<body>
+    <!-- Document Structure -->
+    <header id="document-structure">
+        <h1>Document Structure</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#text-content">Text Content</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#images-and-multimedia">Images and Multimedia</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#semantic-elements">Semantic Elements</a></li>
+            <li><a href="#miscellaneous">Miscellaneous</a></li>
+        </ul>
+    </nav>
+
+    <section id="text-content">
+        <h2>Text Content</h2>
+        <p>This is a paragraph.</p>
+        <h3>Headings</h3>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p><a href="#document-structure">Back to Document Structure</a></p>
+    </section>
+
+    <section id="lists">
+        <h2>Lists</h2>
+        <h3>Unordered List</h3>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+        <h3>Ordered List</h3>
+        <ol>
+            <li>First</li>
+            <li>Second</li>
+        </ol>
+        <h3>Description List</h3>
+        <dl>
+            <dt>HTML</dt>
+            <dd>HyperText Markup Language</dd>
+            <dt>CSS</dt>
+            <dd>Cascading Style Sheets</dd>
+        </dl>
+        <p><a href="#document-structure">Back to Document Structure</a></p>
+    </section>
+
+    <section id="images-and-multimedia">
+        <h2>Images and Multimedia</h2>
+        <img src="image.jpg" alt="Description of the image">
+        <audio controls>
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <figure>
+            <img src="image.jpg" alt="Description of the image">
+            <figcaption>This is a caption for the image</figcaption>
+        </figure>
+        <p><a href="#document-structure">Back to Document Structure</a></p>
+    </section>
+
+    <section id="tables">
+        <h2>Tables</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>25</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total: 2</td>
+                </tr>
+            </tfoot>
+        </table>
+        <p><a href="#document-structure">Back to Document Structure</a></p>
+    </section>
+
+    <section id="forms">
+        <h2>Forms</h2>
+        <form action="/submit-form" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="2" cols="50"></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <p><a href="#document-structure">Back to Document Structure</a></p>
+    </section>
+
+    <section id="semantic-elements">
+        <h2>Semantic Elements</h2>
+        <header>
+            <h1>This is a header</h1>
+        </header>
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+        <article>
+            <h3>Article Title</h3>
+            <p>This is an independent, self-contained content.</p>
+        </article>
+        <section>
+            <h3>Section Title</h3>
+            <p>This is a generic section of a document.</p>
+        </section>
+        <aside>
+            <p>This is content aside from the main content.</p>
+        </aside>
+        <main>
+            <p>This is the main content of a document.</p>
+        </main>
+        <details>
+            <summary>Details</summary>
+            <p>Additional information or controls can be placed here.</p>
+        </details>
+        <p><a href="#document-structure">Back to Document Structure</a></p>
+    </section>
+
+    <section id="miscellaneous">
+        <h2>Miscellaneous</h2>
+        <div>
+            <p>This is a division or section in a document.</p>
+        </div>
+        <iframe src="https://www.example.com" width="300" height="200"></iframe>
+        <meta name="description" content="This is metadata about the HTML document.">
+        <script>
+            alert("This is client-side script.");
+        </script>
+        <style>
+            body {
+                background-color: rgb(166, 241, 230);
+            }
+        </style>
+        <template>
+            <p>This is a template to render.</p>
+        </template>
+        <p><a href="#document-structure">Back to Document Structure</a></p>
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+HTML
+`````
+Hyper Text Markup Language - Structure and Organize the content on a Web page
+
+
+Key Concepts
+````````````
+HTML is not Case Sensitive
+Elements   - It contains Opening and Closing tag, Content and Attributes (What it is)
+Tags       - Marks the beginning and end of Elements, enclosed in <Angle Brackets> (Where it starts and ends)
+Attributes - Provides additional information, placed within the Opening Tags (Extra information or behavior)
+
+Document Structure
+``````````````````
+<!DOCTYPE html> - Defines the document type and version of HTML 
+<html>  - Wraps the entire HTML document 
+<head>  - Contains meta-information about the document 
+<title> - Sets the title of the document 
+<body>  - Contains the visible content of the document 
+
+Text Content
+`````````````
+<p>          - Defines a paragraph 
+<h1> <h6>    - Headings from highest to lowest level 
+<a>          - Creates hyperlinks with href=""
+<span>       - Inline container 
+<strong>     - Indicates strong emphasis 
+<em>         - Indicates emphasis 
+<br>         - Inserts a line break 
+<blockquote> - Defines a block quotation 
+<cite>       - Indicates the title of a work 
+<code>       - Represents a fragment of computer code 
+<pre>        - Preformatted text 
+<q>          - Defines a short inline quotation 
+<small>      - Defines small print 
+<sub>        - Subscript text 
+<sup>        - Superscript text 
+
+Lists
+`````
+<ul>    - Defines an unordered list 
+<ol>    - Defines an ordered list 
+<li>    - Defines a list item 
+<dl>    - Defines a description list 
+<dt>    - Defines a term in a description list 
+<dd>    - Defines a description in a description list 
+
+Images and Multimedia
+`````````````````````
+<img>        - Embeds an image 
+<audio>      - Embeds audio content 
+<video>      - Embeds video content 
+<figure>     - Groups media content with a caption 
+<figcaption> - Provides a caption for a <figure> 
+
+Tables
+``````
+<table>     - Defines a table 
+<tr>        - Defines a table row 
+<th>        - Defines a table header cell 
+<td>        - Defines a table data cell 
+<thead>     - Defines a header for a table 
+<tbody>     - Groups the body content in a table 
+<tfoot>     - Defines a footer for a table 
+
+Forms
+`````
+<form>      - Defines a form 
+<input>     - Defines an input field 
+<textarea>  - Defines a multiline input control (text area) 
+<button>    - Defines a clickable button 
+<select>    - Defines a dropdown list 
+<option>    - Defines an option within a <select> or <datalist> element 
+<label>     - Defines a label for an <input>, <select>, <textarea>, or <button> element 
+<fieldset>  - Groups related elements in a form
+
+Semantic Elements
+`````````````````
+<header>    - Represents introductory content 
+<footer>    - Represents the footer of a document or a section 
+<nav>       - Defines navigation links 
+<article>   - Represents independent, self-contained content 
+<section>   - Represents a generic section of a document 
+<aside>     - Represents content aside from the content it is placed in 
+<main>      - Represents the main content of a document 
+<details>   - Defines additional information or controls 
+<summary>   - Defines a visible heading for a <details> element 
+
+Miscellaneous
+`````````````
+<div>       - Defines a division or section in a document 
+<iframe>    - Embeds another HTML page in a document 
+<meta>      - Provides metadata about the HTML document 
+<script>    - Embeds client-side script 
+<style>     - Contains style information for a document 
+<template>  - Defines a template to render 

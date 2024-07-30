@@ -1,0 +1,10 @@
+Virtual Environment
+- python -m venv env - To Create
+- .\env\Scripts\activate
+
+Django
+- django-admin startproject pname - To Create Project
+- python manage.py startapp aname - To Create App
+- python manage.py migrate - To Migrate Data
+- python manage.py runserver - To Run Server
+
