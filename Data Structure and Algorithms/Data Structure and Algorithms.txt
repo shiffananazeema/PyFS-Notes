@@ -1,0 +1,26 @@
+
+     Data Structure and Algorithm
+     ````````````````````````````
+
+Data Structure and Algorithm helps you to store information neatly and
+   and solve problems quickly and efficiently.
+
+Algorithm - A step-by-step instruction to solve a problem or perform a task.
+              Eg: Recipe to Cook
+
+Data Structure - A way to organize and store data.
+                    Eg: Container for holding information
+
+[Note: Data structure and data types are slightly different. 
+          Data structure is the collection of data types arranged in a specific order.]
+
+Types of Data Structure:
+````````````````````````
+* Linear Data Structure
+* Non-Linear Data Structure
+
+Linear Data Structure:
+``````````````````````
+ - The elements are arranged in sequence on after the other. 
+
+1. Array Data Structure
