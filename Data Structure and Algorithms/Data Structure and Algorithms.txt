@@ -5,22 +5,310 @@
 Data Structure and Algorithm helps you to store information neatly and
    and solve problems quickly and efficiently.
 
-Algorithm - A step-by-step instruction to solve a problem or perform a task.
+Algorithm - Step-by-step procedures or formulas for solving a problem or completing a task.
               Eg: Recipe to Cook
 
-Data Structure - A way to organize and store data.
-                    Eg: Container for holding information
+Data Structure - Ways to store and organize data in a computer so that it can be accessed and modified efficiently.
+              Eg: Container for holding information
 
 [Note: Data structure and data types are slightly different. 
           Data structure is the collection of data types arranged in a specific order.]
 
-Types of Data Structure:
-````````````````````````
-* Linear Data Structure
-* Non-Linear Data Structure
+Data Structure:
+```````````````
+   A data structure is a way to organize and store data in a computer so it can be accessed and used efficiently. 
+It's like a container or a system that holds data in a particular way, depending on what you need to do with that data.
+   
+   - Types of Data Structure
+        * Linear Data Structure
+        * Non-Linear Data Structure
 
 Linear Data Structure:
 ``````````````````````
- - The elements are arranged in sequence on after the other. 
+Linear data structures organize data in a sequential order, where elements are arranged one after another. 
 
-1. Array Data Structure
+1. Array
+   `````
+	A collection of elements, each identified by an index. All the elements are same type.
+Eg:
+	Elements	2 1 4 6 7 8
+	Index		0 1 2 3 4 5
+Use Cases: 
+   Simple data storage, easy access by index.
+
+2. Stack
+   `````
+    A collection of elements that follows the Last In, First Out (LIFO) principle.
+Eg:
+ 	1 2 3 
+	1 2           3			- Books in the table.
+Use Cases: 
+   Undo mechanisms, function call management.
+
+3. Queue
+   `````
+   A collection of elements that follows the First In, First Out (FIFO) principle.
+Eg:
+	  1  2  3
+  1      2  3				- Line to buy tickets	
+Use Cases: 
+   Task scheduling, buffering.
+
+4. Linked List
+   ```````````
+   A sequence of nodes where each node contains data and a reference to the next node.
+Eg:
+   Head -> 1 | next -> 2 | next -> Null
+Use Cases: 
+   Dynamic size, efficient insertion and deletion.
+
+Non-Linear Data Structure:
+``````````````````````````
+Non-linear data structures organize data in a hierarchical or interconnected manner, 
+                            allowing for more complex relationships between data elements.
+
+1. Tree
+   ````
+   A hierarchical structure with a root node and child nodes forming a parent-child relationship.
+Eg:
+				    1               Root
+			       / \              ├── Child1
+                  2   3             └── Child2
+ 			     / \                    ├── Grandchild1
+			    2   3                   └── Grandchild2
+Types:
+   Binary Tree, Binary Search Tree, AVL Tree, B-Tree, B+Tree, Red-Black Tree
+Use Cases: 
+   Hierarchical data, database indexing.
+
+2. Graph
+   `````
+   A set of vertices (nodes) connected by edges (links). Can be directed or undirected, weighted or unweighted.
+Eg:	
+		 (A)---(B)             0 ----- 3
+		  | \   |              |  \
+		  |  \  |              |   2
+		  |   (C)              | /   \
+		 (D)                   1      4
+Types:
+   Spanning Tree and Minimum Spanning Tree, Strongly Connected Components, Adjacency Matrix, Adjacency List
+Use Cases: 
+   Social networks, navigation systems, network topology.
+
+3. Hash Tables
+   ```````````
+   Stores key-value pairs, with each key being unique. A hash function computes an index to store the values.
+Eg:
+   {
+      "apple": 1,
+      "banana": 2,
+      "cherry": 3
+   }
+Use Cases: 
+   Efficient lookup, data retrieval, caching.
+
+Algorithm
+`````````
+   An algorithm is a step-by-step procedure or a set of rules designed to perform a specific task 
+or solve a particular problem. In computer science and mathematics, algorithms are fundamental for 
+processing data, automating tasks, and providing solutions.
+   
+   - Types of Algorithms
+
+1. Sorting Algorithms:
+   ``````````````````
+   Sorting algorithms are used to rearrange a given array or list of elements according to a comparison operator 
+on the elements. The most common orders are numerical or lexicographical order.
+
+   - Bubble Sort
+     ```````````
+     Simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps 
+                                                                             them if they are in the wrong order.
+   Eg:
+       Initial: [4, 2, 3, 1]
+       Sorted:  [1, 2, 3, 4]
+   Use Cases:
+       Teaching simple algorithm concepts, small data sets.
+    
+
+   - Merge Sort
+     ``````````
+     A divide-and-conquer algorithm that divides the list into halves, sorts each half, and then merges them back together.
+   Eg:
+       Initial: [4, 2, 3, 1]
+       Sorted:  [1, 2, 3, 4]
+   Use Cases:
+       Efficient for large data sets, stable sort.
+
+   - Quick Sort
+     ``````````
+     A divide-and-conquer algorithm that picks a pivot element and partitions the array around the pivot.
+   Eg:
+       Initial: [4, 2, 3, 1]
+       Sorted:  [1, 2, 3, 4]
+   Use Cases:
+       Fast in practice for most inputs, not stable.
+
+   - Insertion Sort
+     ``````````````
+     Builds the final sorted array one item at a time by repeatedly picking the next item and inserting it into the correct position.
+   Eg:
+       Initial: [4, 2, 3, 1]
+       Sorted:  [1, 2, 3, 4]
+   Use Cases:
+       Efficient for small data sets, simple and easy to implement.
+ 
+2. Searching Algorithms:
+   ````````````````````
+   Searching algorithms are designed to check for an element or retrieve an element from any data structure where it is stored.
+
+   - Linear Search
+     `````````````
+     Sequentially checks each element of the list until the desired element is found or the list ends.
+   Eg:
+       Searching for 3 in [1, 2, 3, 4] -> Found at index 2
+   Use Cases:
+       Small lists, unsorted data.
+
+   - Binary Search
+     `````````````
+     Efficient algorithm for finding an item in a sorted list by repeatedly dividing the search interval in half.
+   Eg:
+       Searching for 3 in [1, 2, 3, 4, 5] -> Found at index 2
+   Use Cases:
+       Large sorted data sets, logarithmic time complexity.
+
+3. Graph Algorithms:
+   ````````````````
+   Algorithms used to process graph data structures. They are crucial for solving problems in networks, routing, and connected components.
+
+   - Depth-First Search (DFS)
+     ````````````````````````
+     Explores as far down a branch as possible before backtracking.
+   Eg:
+       Traverse graph nodes: A -> B -> D -> E
+   Use Cases:
+       Pathfinding, cycle detection, topological sorting.
+
+   - Breadth-First Search (BFS)
+     ``````````````````````````
+     Explores all neighbors of a node before moving on to the next level.
+   Eg:
+       Traverse graph nodes: A -> B -> C -> D -> E
+   Use Cases:
+       Shortest path in unweighted graphs, level order traversal.
+
+   - Dijkstra's Algorithm
+     `````````````````````
+     Finds the shortest path between nodes in a graph with non-negative weights.
+   Eg:
+       Shortest path from A to E
+   Use Cases:
+       Network routing, geographic mapping.
+
+4. Dynamic Programming:
+   ```````````````````
+   A method for solving complex problems by breaking them down into simpler subproblems. 
+It solves each subproblem only once and stores the solutions.
+
+   - Fibonacci Sequence
+     ``````````````````
+     Calculates Fibonacci numbers using previously computed values.
+   Eg:
+       F(5) = F(4) + F(3) = 5
+   Use Cases:
+       Problems with overlapping subproblems and optimal substructure.
+     
+   - Knapsack Problem
+     ````````````````
+     Determines the maximum value that can be obtained with a limited weight capacity.
+   Eg:
+       Maximize value with items of different weights and values.
+   Use Cases:
+       Resource allocation, budgeting.
+     
+5. Divide and Conquer
+   ``````````````````
+   Solves a problem by breaking it down into smaller subproblems, solving each subproblem independently, and combining the results.
+
+   - Merge Sort
+     ``````````
+     Splits the list into halves, sorts each half, and merges them.
+   Eg:
+       Initial: [4, 2, 3, 1]
+       Sorted:  [1, 2, 3, 4]
+   Use Cases:
+       Sorting large data sets, stable sorting.
+
+   - Quick Sort
+     ``````````
+     Picks a pivot and partitions the array into subarrays, then sorts them.
+   Eg:
+       Initial: [4, 2, 3, 1]
+       Sorted:  [1, 2, 3, 4]
+   Use Cases:
+       Efficient sorting, not stable.
+
+6. Greedy Algorithms
+   `````````````````
+   Makes a series of choices, each of which is the best local choice at the moment. 
+Greedy algorithms are used when a problem has the greedy-choice property and optimal substructure.
+
+   - Huffman Coding
+     ``````````````
+     Uses variable-length codes for encoding characters, with shorter codes for more frequent characters.
+   Eg:
+       Huffman tree for data compression.
+   Use Cases:
+       Data compression, encoding.
+
+   - Prim's and Kruskal's Algorithms
+     ```````````````````````````````
+     Find the minimum spanning tree of a graph, which connects all vertices with the minimum total edge weight.
+   Eg:
+       Connecting cities with minimum road length.
+   Use Cases:
+       Network design, cost minimization.
+
+7. Backtracking
+   ````````````
+   Tries to build a solution incrementally and removes solutions that fail to satisfy the problem's constraints.
+
+   - N-Queens Problem
+     ````````````````
+     Places N queens on an N×N chessboard so that no two queens threaten each other.
+   Eg:
+       Place 8 queens on an 8x8 chessboard.
+   Use Cases:
+       Puzzle solving, constraint satisfaction problems.
+     ```
+
+   - Sudoku Solver
+     `````````````
+     Fills in the blank spaces of a Sudoku grid while following the rules of the game.
+   Eg:
+       Complete the Sudoku puzzle.
+   Use Cases:
+       Puzzle solving, game playing.
+
+Applications of Data Structures and Algorithms
+1. Data Processing
+   - Sorting and searching large datasets.
+   Eg: Database indexing and retrieval.
+
+2. Optimization
+   - Finding the best solution among many possible ones.
+   Eg: Route planning, resource allocation.
+
+3. Security
+   - Encryption and decryption algorithms.
+   Eg: Secure data transmission and storage.
+
+4. Machine Learning
+   - Training models using algorithms like gradient descent.
+   Eg: Image recognition, natural language processing.
+
+5. Game Development
+   - Pathfinding algorithms and data structure optimizations.
+   Eg: AI movement, level design.
+
