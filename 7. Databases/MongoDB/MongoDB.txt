@@ -1,0 +1,5 @@
+MongoDB is an open source NoSQL database.
+It is more advanced and capable of handling big data with dynamic schema features.
+ - Create Cluster using username and password
+ - Connect > MongoDB Compass > Copy the URL
+ - Open MongoDB Compass App
