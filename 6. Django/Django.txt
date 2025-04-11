@@ -8,3 +8,25 @@ Django
 - python manage.py migrate - To Migrate Data
 - python manage.py runserver - To Run Server
 
+ - Back-End Server side web framework - Adrian and Simon in 2003 at Lawrence Journal-World
+
+
+ - Check the version of Djagno		- python -m django --version
+ - Create a project			- django-admin startproject projectname
+ - Create a app				- django-admin startapp appname
+ - Run the project in server		- python manage.py runserver
+ - Make Migrations for database		- python manage.py makemigrations appname
+ - Complete the Migration		- python manage.py migrate appname 
+ - Create the Super User		- python manage.py createsuperuser
+ - Remove all the data 			- python manage.py flush
+ - Create token				- python manage.py drf_create_token admin
+
+ Files inside the Django Project:
+
+ - manage.py		- command-line utility for administrative tasks
+ - db.sqlite3		- database file stored in the SQLite 3 format
+ - __init__.py		- tells python this directory consider as a Python Package
+ - settings.py		- contains all the settings and configuration 
+ - urls.py		- mapping between urls and views
+ - asgi.py		- entry point for ASGI-compatible web server - Asynchronous Server Gateway interface
+ - wsgi.py		- entry point for WSGI-compatible web server - Web Server Gateway Interface
