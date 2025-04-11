@@ -1,0 +1,86 @@
+HTML: 
+`````
+ - Hyper Text Markable Language – Tim Berners-Lee in 1993 at CERN, Switzerland.
+
+  Tags - Enclosed in angle Brackets.  <h1> </h1>
+  Attributes - Additional information placed inside. <img src=”mycat.jpg”>
+  
+ Document Outline
+ ````````````````
+ <!DOCTYPE>		- Version of X(HTML)
+ <html>			- Html document
+ <head>			- Page Information
+ <body>			- Page Contents
+
+Page Information
+````````````````
+<base/>			- Base URL
+<meta/>			- Meta data
+<title/>		- Title
+<link/>			- Relevant resource
+<style/>		- Style resource
+<script>		- Script resource
+
+Document Structure
+``````````````````
+<h[1-6]>		- Heading
+<div>			- Page section
+<span>			- Inline section
+<p>			- Paragraph
+<br/>			- Line Break
+<hr/>			- Horizontal rule
+
+Lists
+`````
+<ol>			- Ordered List
+<ul>			- Unordered List
+<li>			- List item
+<dl>			- Definition List
+<dt> 			- Definition term
+<dd>			- Term Description
+
+Links
+`````
+<a href=""> 		- Page link
+<a href="mailto:">	- Email link
+<a name="name">		- Anchor
+<a href="#name">	- Link to anchor
+
+Tables
+```````
+<table> 		- Table
+<caption>		- Caption
+<thead>			- Table Header
+<tbody>			- Table Body
+<tfoot>			- Table Footer
+<colgroup>		- Column group
+<col/>			- Column
+<tr>			- Table row
+<th>			- Header cell
+<td>			- Table cell 
+
+Forms
+`````
+<form>			- From
+<fieldset>		- Collection of fields
+<legend>		- Form legend
+<label>			- Input label
+<input>			- Form input
+<select>		- Drop-down box
+<outgroup>		- Group of options
+<option>		- Drop-down options
+<textarea>		- Large text input
+<button>		- Button
+
+Emmet in Visual Studio Code
+```````````````````````````
+!			- Basic html page
+ctrl+g			- To go to the line using number
+tag.classname#idname	- nav.today.afternoon
+tag			- opens the tag
+.			- class
+#			- id 
+ctrl+enter 		- new line
+header+article>ul>li*5>lorem
++			- sibling
+>			- child

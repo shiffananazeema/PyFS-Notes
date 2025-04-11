@@ -1,0 +1,218 @@
+Python: 
+```````
+ - Popular Programming Language - Guido van Rossum in 1991 at CWI in the Netherlands
+
+Reserved words or Keywords:
+```````````````````````````
+ - Keywords have special meanings to the compiler. There are 35 keywords.
+ 
+False		await		else		import		pass
+None		break	   	except		in		raise
+True		class	   	finally		is		return
+and 		continue   	for		lambda		try
+as 		def 	   	from		nonlocal	while
+assert		del   	   	global		not		with
+async		elif	   	if		or		yield
+
+Value Keywords		- 	True, False, None
+Operator Keywords	- 	and, or, not, in, is
+Control Flow Keywords	- 	if, elif, else
+Iteration Keywords	- 	for, while, break, continue
+Structure Keywords	- 	def, class, with, pass, lambda
+Returning Keywords	-	return, yield
+Import Keywords		- 	import, from, as
+Exception-Handling Keywords -	try, except, raise, finally, assert
+Asynchronous Keywords	    - 	async, await
+Variable Handling Keywords  - 	del, global, nonlocal
+
+True, False - Boolean value
+ Eg:
+    x = True			y = False
+    x is True			y is not True
+    # True			# True
+    
+None - Represents no Value
+ Eg:
+    def func():				- can't print the call 
+    	print("hello")			- can't print the print
+    x = func()
+    # hello
+    print(x)			
+    # None
+    
+Variable
+`````````
+ Cotainers for storing data values. 
+ Literals - Raw data assigned to a Variable or Constant
+	
+	- Python is case sensitive. Eg: y and Y are Different
+
+  name  = "Shiffana" 
+   |	      |
+Variable   Literal
+
+
+Data Types
+``````````
+In Python, there are several built-in data types that you can use to store different kinds of data. 
+Here is a comprehensive list of all the data types in Python:
+
+Numeric Types:
+int (integer)
+float (floating-point number)
+complex (complex number)
+
+Sequence Types:
+list (mutable ordered sequence of elements)
+tuple (immutable ordered sequence of elements)
+range (immutable sequence of numbers)
+
+Text Type:
+str (string of characters)
+
+Mapping Type:
+dict (mutable collection of key-value pairs)
+
+Set Types:
+set (mutable collection of unique elements)
+frozenset (immutable collection of unique elements)
+
+Boolean Type:
+bool (boolean value True or False)
+
+Binary Types:
+bytes (immutable sequence of bytes)
+bytearray (mutable sequence of bytes)
+memoryview (memory view of a bytes object)
+
+
+Numeric Types	:	int, float, complex
+Text Type	:	str
+Boolean Type	:	bool
+Sequence Types	:	list, tuple, range
+Mapping Type	:	dict
+Set Types	: 	set, frozenset
+Binary Types	:	bytes, bytearray, memoryview
+None Type	:	NoneType
+
+Eg:
+```
+x = 1					- Integer 
+x = 2.8					- Float	  
+x = 1j					- Complex 
+x = "Hello"				- String  
+x = True				- Boolean	
+x = ["apple","banana", "cherry"]	- List
+x = ("apple", "banana", "cherry")	- Tuple
+x = range(6)				- Range
+x = {"name" : "John", "age" : 36}	- Dictionary
+x = {"apple", "banana", "cherry"}	- Set
+x = frozenset({"apple", "banana"})	- Frozenset
+x = b"Hello"				- Bytes
+x = bytearray(5)			- ByteArray
+x = memoryview(bytes(5))		- MemoryView
+x = None				- NoneType
+
+
+Data Type:		Type Casting:	- Changing the type of data
+``````````		`````````````
+print(type(x))		x = int("3")		
+
+
+String:
+```````
+ - Should be in ' '  or " "
+ 
+ Length 	- len(a)
+ Check  	- "Worth" in me 	- True
+ 		- "Quit" not in me 	- True
+ Slice  	- a[2:1]/[2:]/[:2]/[-1:]
+ Upper  	- a.upper()
+ Lower  	- a.lower()
+ Remove Space	- a.strip()
+ Replace	- a.replace("F","S")
+ Split		- a.split(",")
+ Capitalize	- a.capitalize()
+ Format		- a.format(done) - {}	- Add integer in string 
+ Escape String 	- \
+ 		- \' , \\ , \n, \t 
+		
+		
+Collection Data Types - List , Tuple , Set , Dictionary
+List [] - Ordered , Changeable , Allow Duplicate values.
+Tuple() - Ordered , Unchangeable , Allow Duplicate values.
+Dict {} - Unordered , Changable , Doesn't Allow Duplicate values , Key - Value pairs.
+Set  {}	- Unordered , Changebale - set, Unchangable - frozenset , Doesn't Allow Duplicate values. 
+
+
+Accessing	- txt[1]/txt[2:5]
+Checking	- if "apple" in txt:
+Length		- len(txt)			- length of the list
+Counting	- txt.count(apple)		- count the mentioned item in the list
+Changing	- txt[1] = "banana"		- changing the item
+Inserting	- txt.insert(3, "orange")	- inserted at the mentioned index
+Append		- txt.append("cherry")		- inserted at the end
+Extend		- txt.extend(list)		- adding two list
+Remove		- txt.remove("banana")		- removing by item
+Pop		- txt.pop(1)/()			- removing by index / last item
+Deleting	- del txt[1]			- remove by index
+		- del txt			- remove the entire list
+Clear		- txt.clear()			- empty the list
+Sorting		- txt.sort()			- ascending order
+		- txt.reverse()			- decending order
+		
+
+Operators:
+``````````
+	- used to perform operations on variables and values
+
+ Arithmetic Operator	- Numeric values to perform common Mathematical Operations
+ 			- + , - , * , / , % , ** , // 
+			
+ Assignment Operator	- Assign values to Variables 
+ 			- = , += , -=, *= , /=, %=, **=, //= , &= , |= , ^= , >>= , <<= 
+ 
+ Comparison Operator	- Compare two values
+ 			- == , != , > , < , >= , <=
+			
+ Logical Operator	- Combine Conditional Statements
+ 			- and , or , not 
+			
+ Identity Operator	- Compare the objects
+ 			-  is , is not
+			
+ Membership Operator	- Test is a sequence is present
+ 			- in , not in
+			
+ Bitwise Operator	- Compare Binary Numbers
+ 			- & , | , ^ , ~ , << , >>
+			
+
+Object Oriented Programming:
+```````````````````````````
+OOP (Object-Oriented Programming) is a programming paradigm that emphasizes the use of objects and classes to represent and manipulate data. 
+In Python, you can use OOP concepts to design and create classes, objects, and methods that encapsulate data and behavior into a single unit. 
+Here are some of the key OOP concepts in Python:
+
+Class: 
+A class is a blueprint or a template for creating objects. It defines the attributes (data) and methods (functions) that the objects of that class will have.
+
+Object: 
+An object is an instance of a class. It is created from a class and has its own unique data and behavior. 
+Objects can be created, modified, and deleted dynamically during program execution.
+
+Encapsulation: 
+Encapsulation is the process of hiding the implementation details of a class from the outside world and 
+exposing only the necessary interface for interacting with the class. This helps to improve code modularity and reduce code complexity.
+
+Inheritance: 
+Inheritance is the ability of a class to inherit the attributes and methods of another class. 
+It allows you to reuse existing code and create new classes that extend the functionality of existing classes.
+
+Polymorphism: 
+Polymorphism is the ability of different objects to respond to the same message (method call) in different ways. 
+It allows you to write code that can work with different types of objects without knowing their specific types at compile-time.
+
+In Python, you can use these OOP concepts to create reusable, modular, and maintainable code that is easier to understand and debug. 
+OOP can be a powerful tool for solving complex programming problems and building robust software systems.
+    
