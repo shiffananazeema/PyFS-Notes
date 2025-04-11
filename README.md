@@ -1,4 +1,4 @@
-# Python Full Stack Development 
+# Python Full Stack Development
 
 1. Python
 2. HTML
