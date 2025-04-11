@@ -1,0 +1,63 @@
+GitHub: 
+``````
+Git    - Version control system.
+GitHub - Online Platform for hosting Git repositories & collaborate with others
+
+Version Control = Source control - track and manage the changes in source code
+
+Key Concepts:
+`````````````
+Repositories - Collection of files and folders associated with the project, where code is stored and managed
+Branches     - Developers can work on seperate branches within a repository. Each branch represents a specific task or feature
+Commits      - Its helps to track the History of modifications
+
+
+Important Commands:
+```````````````````
+ 1.  Initialize the Git 	  - git init
+ 2.  Select the Repository 	- git remote add origin https://github.com/shiffananazeema/Learning.git
+ 3.  Set different url      - git remote set-url origin https://github.com/shiffananazeema/Learning.git
+ 4.  Select the Branch		  - git branch -M main   
+ 5.  Add the Changes		    - git add .
+ 6.  Commit the Changes		  - git commit -m "NametheChange"
+ 7.  Push the Changes		    - git push / git push origin main
+ 8.  Pull the Changes		    - git pull / git pull origin main
+ 9.  Undo the Changes       - git revert / git revert "commited name"
+10.  Cloning 			          - git clone link
+11.  Merge with branch		  - git merge bname
+12.  Checkout the Changes	  - git checkout / git checkout -b bname
+13.  Status of the git		  - git status
+14.  History of Changes		  - git log 
+15.  Reset the Changes		  - git reset / git reset <commit> / git reset --hard
+16.  Differcence Changed	  - git diff
+17.  Fetching all the files	- git fetch / git fetch bname / git fetch --all
+18.  Configuration setup    - git config user.name/email "name/email" / git config --global user.name "name"
+19.  Remove Untracked files - git clean
+20.  Apply changes in both b- git rebase
+
+  -  Exit git log		- q / z
+
+
+USUAL STEPS:
+````````````
+1. git init
+2. git add .
+3. git commit -m "commit"
+4. git push
+
+[Add remote command if repository is not selected as 4]
+
+If Permission Denied:
+Check the Configuration for name and email
+Setting > Developer Option > Generate Token
+git remote set-url origin https://<YOUR-TOKEN>@github.com/username/repository.git
+
+Initialize remote-add branch, 
+add commit push pull revert, 
+clone merge, 
+checkout status log,
+reset differnce fetch
+config clean rebase
+
+
+https://learngitbranching.js.org/
