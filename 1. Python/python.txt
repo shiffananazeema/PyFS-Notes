@@ -7,20 +7,20 @@ Reserved words or Keywords:
  - Keywords have special meanings to the compiler. There are 35 keywords.
  
 False		await		else		import		pass
-None		break	   	except		in		raise
-True		class	   	finally		is		return
-and 		continue   	for		lambda		try
-as 		def 	   	from		nonlocal	while
-assert		del   	   	global		not		with
-async		elif	   	if		or		yield
+None		break	   	except		in			raise
+True		class	   	finally		is			return
+and 		continue   	for			lambda		try
+as 			def 	   	from		nonlocal	while
+assert		del   	   	global		not			with
+async		elif	   	if			or			yield
 
-Value Keywords		- 	True, False, None
-Operator Keywords	- 	and, or, not, in, is
+Value Keywords			- 	True, False, None
+Operator Keywords		- 	and, or, not, in, is
 Control Flow Keywords	- 	if, elif, else
-Iteration Keywords	- 	for, while, break, continue
-Structure Keywords	- 	def, class, with, pass, lambda
-Returning Keywords	-	return, yield
-Import Keywords		- 	import, from, as
+Iteration Keywords		- 	for, while, break, continue
+Structure Keywords		- 	def, class, with, pass, lambda
+Returning Keywords		-	return, yield
+Import Keywords			- 	import, from, as
 Exception-Handling Keywords -	try, except, raise, finally, assert
 Asynchronous Keywords	    - 	async, await
 Variable Handling Keywords  - 	del, global, nonlocal
@@ -44,6 +44,7 @@ Variable
 `````````
  Cotainers for storing data values. 
  Literals - Raw data assigned to a Variable or Constant
+ Python is a dynamically-typed language, and there is no built-in mechanism to enforce constant values.
 	
 	- Python is case sensitive. Eg: y and Y are Different
 
@@ -87,35 +88,35 @@ memoryview (memory view of a bytes object)
 
 
 Numeric Types	:	int, float, complex
-Text Type	:	str
+Text Type		:	str
 Boolean Type	:	bool
 Sequence Types	:	list, tuple, range
 Mapping Type	:	dict
-Set Types	: 	set, frozenset
+Set Types		: 	set, frozenset
 Binary Types	:	bytes, bytearray, memoryview
-None Type	:	NoneType
+None Type		:	NoneType
 
 Eg:
 ```
-x = 1					- Integer 
-x = 2.8					- Float	  
-x = 1j					- Complex 
-x = "Hello"				- String  
-x = True				- Boolean	
+x = 1								- Integer 
+x = 2.8								- Float	  
+x = 1j								- Complex 
+x = "Hello"							- String  
+x = True							- Boolean	
 x = ["apple","banana", "cherry"]	- List
 x = ("apple", "banana", "cherry")	- Tuple
-x = range(6)				- Range
+x = range(6)						- Range
 x = {"name" : "John", "age" : 36}	- Dictionary
 x = {"apple", "banana", "cherry"}	- Set
 x = frozenset({"apple", "banana"})	- Frozenset
-x = b"Hello"				- Bytes
-x = bytearray(5)			- ByteArray
-x = memoryview(bytes(5))		- MemoryView
-x = None				- NoneType
+x = b"Hello"						- Bytes
+x = bytearray(5)					- ByteArray
+x = memoryview(bytes(5))			- MemoryView
+x = None							- NoneType
 
 
-Data Type:		Type Casting:	- Changing the type of data
-``````````		`````````````
+Data Type:			Type Casting:	- Changing the type of data
+``````````			`````````````
 print(type(x))		x = int("3")		
 
 
@@ -123,43 +124,37 @@ String:
 ```````
  - Should be in ' '  or " "
  
- Length 	- len(a)
- Check  	- "Worth" in me 	- True
- 		- "Quit" not in me 	- True
- Slice  	- a[2:1]/[2:]/[:2]/[-1:]
- Upper  	- a.upper()
- Lower  	- a.lower()
+ Length 		- len(a)
+ Check  		- "Worth" in me 	- True
+ 				- "Quit" not in me 	- True
+ Slice  		- a[2:1]/[2:]/[:2]/[-1:]
+ Upper  		- a.upper()
+ Lower  		- a.lower()
  Remove Space	- a.strip()
- Replace	- a.replace("F","S")
- Split		- a.split(",")
- Capitalize	- a.capitalize()
- Format		- a.format(done) - {}	- Add integer in string 
+ Replace		- a.replace("F","S")
+ Split			- a.split(",")
+ Capitalize		- a.capitalize()
+ Format			- a.format(done) - {}	- Add integer in string 
  Escape String 	- \
- 		- \' , \\ , \n, \t 
+ 				- \' , \\ , \n, \t 
 		
-		
-Collection Data Types - List , Tuple , Set , Dictionary
-List [] - Ordered , Changeable , Allow Duplicate values.
-Tuple() - Ordered , Unchangeable , Allow Duplicate values.
-Dict {} - Unordered , Changable , Doesn't Allow Duplicate values , Key - Value pairs.
-Set  {}	- Unordered , Changebale - set, Unchangable - frozenset , Doesn't Allow Duplicate values. 
 
 
 Accessing	- txt[1]/txt[2:5]
 Checking	- if "apple" in txt:
-Length		- len(txt)			- length of the list
-Counting	- txt.count(apple)		- count the mentioned item in the list
-Changing	- txt[1] = "banana"		- changing the item
+Length		- len(txt)					- length of the list
+Counting	- txt.count(apple)			- count the mentioned item in the list
+Changing	- txt[1] = "banana"			- changing the item
 Inserting	- txt.insert(3, "orange")	- inserted at the mentioned index
 Append		- txt.append("cherry")		- inserted at the end
-Extend		- txt.extend(list)		- adding two list
+Extend		- txt.extend(list)			- adding two list
 Remove		- txt.remove("banana")		- removing by item
-Pop		- txt.pop(1)/()			- removing by index / last item
-Deleting	- del txt[1]			- remove by index
-		- del txt			- remove the entire list
-Clear		- txt.clear()			- empty the list
-Sorting		- txt.sort()			- ascending order
-		- txt.reverse()			- decending order
+Pop			- txt.pop(1)/()				- removing by index / last item
+Deleting	- del txt[1]				- remove by index
+			- del txt					- remove the entire list
+Clear		- txt.clear()				- empty the list
+Sorting		- txt.sort()				- ascending order
+			- txt.reverse()				- decending order
 		
 
 Operators:
@@ -167,51 +162,139 @@ Operators:
 	- used to perform operations on variables and values
 
  Arithmetic Operator	- Numeric values to perform common Mathematical Operations
- 			- + , - , * , / , % , ** , // 
+ 			 + , - , * , / , % , ** , // 
+
+	| Operator | Name           | Description                               | Example        |
+	| -------- | -------------- | ----------------------------------------- | -------------- |
+	|  +       | Addition       | Adds two values                           | 3 + 2 = 5     |
+	|  -       | Subtraction    | Subtracts right operand from left         |  5 - 2 = 3     |
+	|  *       | Multiplication | Multiplies both values                    |  4 * 3 = 12    |
+	|  /       | Division       | Divides left by right (float result)      |  10 / 4 = 2.5  |
+	|  //      | Floor Division | Divides and removes decimal (rounds down) |  10 // 4 = 2   |
+	|  %       | Modulo         | Returns remainder                         |  10 % 3 = 1    |
+	|  **      | Exponentiation | Power of (left raised to right)           |  2 ** 3 = 8    |
+
 			
  Assignment Operator	- Assign values to Variables 
- 			- = , += , -=, *= , /=, %=, **=, //= , &= , |= , ^= , >>= , <<= 
+ 			 = , += , -=, *= , /=, %=, **=, //= , &= , |= , ^= , >>= , <<= 
+
+	| Operator | Name                | Description       | Example   |   
+	| -------- | ------------------- | ----------------- | --------- | 
+	|  =       | Assignment          | Assigns value     |  x = 5    |     
+	|  +=      | Add AND assign      |  x = x + 3        |  x += 3   |    
+	|  -=      | Subtract AND assign |  x = x - 2        |  x -= 2   |     
+	|  *=      | Multiply AND assign |  x = x * 4        |  x *= 4   |   
+	|  /=      | Divide AND assign   |  x = x / 2        |  x /= 2   |  
+	|  //=     | Floor divide assign |  x = x // 2       |  x //= 2  |  
+	|  %=      | Modulo AND assign   |  x = x % 2        |  x %= 2   |   
+	|  **=     | Power AND assign    |  x = x ** 2       |  x **= 2  |    
+	|  &=      | Bitwise AND assign  |  x = x & 1        |  x &= 1   |   
+	|  |=      | Bitwise OR assign   |  x = x | 2        |  x |= 2   | 
+	|  ^=      | Bitwise XOR assign  |  x = x ^ 3        |  x ^= 3   |     
+	|  >>=     | Right shift assign  |  x = x >> 1       |  x >>= 1  |    
+	|  <<=     | Left shift assign   |  x = x << 1       |  x <<= 1  |    
+
  
  Comparison Operator	- Compare two values
- 			- == , != , > , < , >= , <=
+ 			 == , != , > , < , >= , <=
+
+	| Operator | Description              | Example  |
+	| -------- | ------------------------ | -------- |
+	|  ==      | Equal to                 |  x == y  |
+	|  !=      | Not equal to             |  x != y  |
+	|  >       | Greater than             |  x > y   |
+	|  <       | Less than                |  x < y   |
+	|  >=      | Greater than or equal to |  x >= y  |
+	|  <=      | Less than or equal to    |  x <= y  |
+
 			
  Logical Operator	- Combine Conditional Statements
- 			- and , or , not 
+ 			 and , or , not 
+
+	| Operator | Description                      | Example            |
+	| -------- | -------------------------------- | ------------------ |
+	|  and     | True if both conditions are True |  x > 2 and x < 10  |
+	|  or      | True if one condition is True    |  x < 5 or x > 20   |
+	|  not     | Reverses the condition           |  not(x == 5)       |
+
 			
  Identity Operator	- Compare the objects
- 			-  is , is not
+ 			 is , is not
+
+	| Operator | Description                                 | Example      |
+	| -------- | ------------------------------------------- | ------------ |
+	|  is      | True if both variables point to same object |  x is y      |
+	|  is not  | True if they don't point to same object     |  x is not y  |
+
 			
  Membership Operator	- Test is a sequence is present
- 			- in , not in
-			
+ 			 in , not in
+
+	| Operator | Description                   | Example            |
+	| -------- | ----------------------------- | ------------------ |
+	|  in      | True if value is in sequence  |  "a" in "apple"    |
+	|  not in  | True if value not in sequence |  "z" not in "dog"  |
+
+
  Bitwise Operator	- Compare Binary Numbers
- 			- & , | , ^ , ~ , << , >>
+ 			 & , | , ^ , ~ , << , >>
 			
+	| Operator | Description        | Example (in binary)       |     
+	| -------- | ------------------ | ------------------------- |
+	|  &       | AND                |  5 & 3 → 101 & 011 = 001  |    
+	|  |       | OR                 |  5 | 3 → 101 | 011 = 111  |                    
+	|  ^       | XOR (exclusive OR) |  5 ^ 3 → 101 ^ 011 = 110  |   
+	|  ~       | NOT (inverts bits) |  ~5 → -(5+1) = -6         |  
+	|  <<      | Left shift         |  2 << 1 → 4  (10 → 100)   |    
+	|  >>      | Right shift        |  4 >> 1 → 2  (100 → 10)   |    
+
+
+		
+Collection Data Types
+`````````````````````
+| Type        | Symbol      | Ordered | Changeable | Duplicates | Key Feature                       | Example                           |
+| ----------- | ----------- | ------- | ---------- | ---------- | --------------------------------- | --------------------------------- |
+|  List       |  []         |   Yes   |   Yes      |   Yes      | Stores items in order, modifiable |  ['apple', 'banana', 'apple']     |
+|  Tuple      |  ()         |   Yes   |   No       |   Yes      | Fixed after creation              |  ('a', 'b', 'a')                  |
+|  Set        |  {}         |   No    |   Yes      |   No       | Unordered, no duplicates          |  {1, 2, 3}                        |
+|  FrozenSet  | frozenset() |   No    |   No       |   No       | Like set but immutable            |  frozenset([1, 2, 3])             |
+|  Dict       |  {}         |   No    |   Yes      |   No       | Key-value pairs                   |  {'name': 'Shiffana', 'age': 25}  |
+
 
 Object Oriented Programming:
 ```````````````````````````
-OOP (Object-Oriented Programming) is a programming paradigm that emphasizes the use of objects and classes to represent and manipulate data. 
-In Python, you can use OOP concepts to design and create classes, objects, and methods that encapsulate data and behavior into a single unit. 
+  -  OOP (Object-Oriented Programming) is a programming paradigm that emphasizes the use of objects and 
+		classes to represent and manipulate data. 
+  -  In Python, you can use OOP concepts to design and create classes, objects, and methods that encapsulate 
+		data and behavior into a single unit. 
+		
 Here are some of the key OOP concepts in Python:
 
-Class: 
-A class is a blueprint or a template for creating objects. It defines the attributes (data) and methods (functions) that the objects of that class will have.
+Class:
+`````` 
+  -  A class is a blueprint or a template for creating objects. It defines the attributes (data) and 
+  		methods (functions) that the objects of that class will have.
 
-Object: 
-An object is an instance of a class. It is created from a class and has its own unique data and behavior. 
-Objects can be created, modified, and deleted dynamically during program execution.
+Object:
+```````` 
+  -  An object is an instance of a class. It is created from a class and has its own unique data and behavior. 
+	 	Objects can be created, modified, and deleted dynamically during program execution.
 
 Encapsulation: 
-Encapsulation is the process of hiding the implementation details of a class from the outside world and 
-exposing only the necessary interface for interacting with the class. This helps to improve code modularity and reduce code complexity.
+``````````````
+  -	Encapsulation is the process of hiding the implementation details of a class from the outside world and 
+		exposing only the necessary interface for interacting with the class. This helps to improve code
+		modularity and reduce code complexity.
 
 Inheritance: 
-Inheritance is the ability of a class to inherit the attributes and methods of another class. 
-It allows you to reuse existing code and create new classes that extend the functionality of existing classes.
+````````````
+  -  Inheritance is the ability of a class to inherit the attributes and methods of another class. 
+  -  It allows you to reuse existing code and create new classes that extend the functionality of existing classes.
 
 Polymorphism: 
-Polymorphism is the ability of different objects to respond to the same message (method call) in different ways. 
-It allows you to write code that can work with different types of objects without knowing their specific types at compile-time.
+`````````````
+  -  Polymorphism is the ability of different objects to respond to the same message (method call) in different ways. 
+  -  It allows you to write code that can work with different types of objects without knowing their specific types at compile-time.
 
 In Python, you can use these OOP concepts to create reusable, modular, and maintainable code that is easier to understand and debug. 
 OOP can be a powerful tool for solving complex programming problems and building robust software systems.
