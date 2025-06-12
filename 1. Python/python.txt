@@ -2,251 +2,372 @@ Python:
 ```````
  - Popular Programming Language - Guido van Rossum in 1991 at CWI in the Netherlands
 
-Reserved words or Keywords:
-```````````````````````````
- - Keywords have special meanings to the compiler. There are 35 keywords.
- 
-False		await		else		import		pass
-None		break	   	except		in			raise
-True		class	   	finally		is			return
-and 		continue   	for			lambda		try
-as 			def 	   	from		nonlocal	while
-assert		del   	   	global		not			with
-async		elif	   	if			or			yield
+1. Reserved words or Keywords:
+2. Variable:
+3. Data Types:
+4. Operations:
+5. Operators:
+6. Flow Control:
 
-Value Keywords			- 	True, False, None
-Operator Keywords		- 	and, or, not, in, is
-Control Flow Keywords	- 	if, elif, else
-Iteration Keywords		- 	for, while, break, continue
-Structure Keywords		- 	def, class, with, pass, lambda
-Returning Keywords		-	return, yield
-Import Keywords			- 	import, from, as
-Exception-Handling Keywords -	try, except, raise, finally, assert
-Asynchronous Keywords	    - 	async, await
-Variable Handling Keywords  - 	del, global, nonlocal
+[Qucik Search: Select -> Contol + f -> Enter]
 
-True, False - Boolean value
- Eg:
-    x = True			y = False
-    x is True			y is not True
-    # True			# True
-    
-None - Represents no Value
- Eg:
-    def func():				- can't print the call 
-    	print("hello")			- can't print the print
-    x = func()
-    # hello
-    print(x)			
-    # None
-    
-Variable
-`````````
- Cotainers for storing data values. 
- Literals - Raw data assigned to a Variable or Constant
- Python is a dynamically-typed language, and there is no built-in mechanism to enforce constant values.
+1. Reserved words or Keywords:
+```````````````````````````````
+	- Keywords have special meanings to the compiler. There are 35 keywords.
 	
-	- Python is case sensitive. Eg: y and Y are Different
+	False		await		else		import		pass
+	None		break	   	except		in			raise
+	True		class	   	finally		is			return
+	and 		continue   	for			lambda		try
+	as 			def 	   	from		nonlocal	while
+	assert		del   	   	global		not			with
+	async		elif	   	if			or			yield
 
-  name  = "Shiffana" 
-   |	      |
-Variable   Literal
+	Value Keywords			- 	True, False, None
+	Operator Keywords		- 	and, or, not, in, is
+	Control Flow Keywords	- 	if, elif, else
+	Iteration Keywords		- 	for, while, break, continue
+	Structure Keywords		- 	def, class, with, pass, lambda
+	Returning Keywords		-	return, yield
+	Import Keywords			- 	import, from, as
+	Exception-Handling Keywords -	try, except, raise, finally, assert
+	Asynchronous Keywords	    - 	async, await
+	Variable Handling Keywords  - 	del, global, nonlocal
 
-
-Data Types
-``````````
-In Python, there are several built-in data types that you can use to store different kinds of data. 
-Here is a comprehensive list of all the data types in Python:
-
-Numeric Types:
-int (integer)
-float (floating-point number)
-complex (complex number)
-
-Sequence Types:
-list (mutable ordered sequence of elements)
-tuple (immutable ordered sequence of elements)
-range (immutable sequence of numbers)
-
-Text Type:
-str (string of characters)
-
-Mapping Type:
-dict (mutable collection of key-value pairs)
-
-Set Types:
-set (mutable collection of unique elements)
-frozenset (immutable collection of unique elements)
-
-Boolean Type:
-bool (boolean value True or False)
-
-Binary Types:
-bytes (immutable sequence of bytes)
-bytearray (mutable sequence of bytes)
-memoryview (memory view of a bytes object)
-
-
-Numeric Types	:	int, float, complex
-Text Type		:	str
-Boolean Type	:	bool
-Sequence Types	:	list, tuple, range
-Mapping Type	:	dict
-Set Types		: 	set, frozenset
-Binary Types	:	bytes, bytearray, memoryview
-None Type		:	NoneType
-
-Eg:
-```
-x = 1								- Integer 
-x = 2.8								- Float	  
-x = 1j								- Complex 
-x = "Hello"							- String  
-x = True							- Boolean	
-x = ["apple","banana", "cherry"]	- List
-x = ("apple", "banana", "cherry")	- Tuple
-x = range(6)						- Range
-x = {"name" : "John", "age" : 36}	- Dictionary
-x = {"apple", "banana", "cherry"}	- Set
-x = frozenset({"apple", "banana"})	- Frozenset
-x = b"Hello"						- Bytes
-x = bytearray(5)					- ByteArray
-x = memoryview(bytes(5))			- MemoryView
-x = None							- NoneType
-
-
-Data Type:			Type Casting:	- Changing the type of data
-``````````			`````````````
-print(type(x))		x = int("3")		
-
-
-String:
-```````
- - Should be in ' '  or " "
- 
- Length 		- len(a)
- Check  		- "Worth" in me 	- True
- 				- "Quit" not in me 	- True
- Slice  		- a[2:1]/[2:]/[:2]/[-1:]
- Upper  		- a.upper()
- Lower  		- a.lower()
- Remove Space	- a.strip()
- Replace		- a.replace("F","S")
- Split			- a.split(",")
- Capitalize		- a.capitalize()
- Format			- a.format(done) - {}	- Add integer in string 
- Escape String 	- \
- 				- \' , \\ , \n, \t 
+	True, False - Boolean value
+	Eg:
+		x = True			y = False
+		x is True			y is not True
+		# True			# True
 		
-
-
-Accessing	- txt[1]/txt[2:5]
-Checking	- if "apple" in txt:
-Length		- len(txt)					- length of the list
-Counting	- txt.count(apple)			- count the mentioned item in the list
-Changing	- txt[1] = "banana"			- changing the item
-Inserting	- txt.insert(3, "orange")	- inserted at the mentioned index
-Append		- txt.append("cherry")		- inserted at the end
-Extend		- txt.extend(list)			- adding two list
-Remove		- txt.remove("banana")		- removing by item
-Pop			- txt.pop(1)/()				- removing by index / last item
-Deleting	- del txt[1]				- remove by index
-			- del txt					- remove the entire list
-Clear		- txt.clear()				- empty the list
-Sorting		- txt.sort()				- ascending order
-			- txt.reverse()				- decending order
+	None - Represents no Value
+	Eg:
+		def func():				- can't print the call 
+			print("hello")			- can't print the print
+		x = func()
+		# hello
+		print(x)			
+		# None
+    
+2. Variable:
+````````````
+	Cotainers for storing data values. 
+	Literals - Raw data assigned to a Variable or Constant
+	Python is a dynamically-typed language, and there is no built-in mechanism to enforce constant values.
 		
+		- Python is case sensitive. Eg: y and Y are Different
 
-Operators:
-``````````
+	name  = "Shiffana" 
+	|	      |
+	Variable   Literal
+
+3. Data Types:
+``````````````
+	- In Python, there are several built-in data types that you can use to store different kinds of data. 
+		Here is a comprehensive list of all the data types in Python:
+
+	|   Category         |   Type       |   Description                                     |   Example                           |
+	| ------------------ | ------------ | ------------------------------------------------- | ----------------------------------- |
+	| 1 Numeric Types    |  int         | Whole numbers, positive or negative               |  x = 10                             |
+	|                    |  float       | Numbers with decimal points                       |  pi = 3.14                          |
+	|                    |  complex     | Numbers with real and imaginary parts             |  z = 2 + 3j                         |
+	| 2 Text Type        |  str         | Sequence of characters (Unicode)                  |  name = "Alice"                     |
+	| 3 Boolean Type     |  bool        | Logical values: True or False                     |  is_active = True                   |
+	| 4 Sequence Types   |  list        | Mutable ordered sequence                          |  fruits = ["apple", "banana"]       |
+	|                    |  tuple       | Immutable ordered sequence                        |  point = (10, 20)                   |
+	|                    |  range       | Immutable range of numbers                        |  numbers = range(5)                 |
+	| 5 Mapping Type     |  dict        | Key-value pair collection                         |  user = {"name": "Bob", "age": 30}  |
+	| 6 Set Types        |  set         | Unordered collection of unique elements (mutable) |  s = {1, 2, 3}                      |
+	|                    |  frozenset   | Unordered unique collection (immutable)           |  fs = frozenset([1, 2, 3])          |
+	| 7 Binary Types     |  bytes       | Immutable byte sequence                           |  b = b"hello"                       |
+	|                    |  bytearray   | Mutable byte sequence                             |  ba = bytearray(b"data")            |
+	|                    |  memoryview  | View over byte data                               |  mv = memoryview(b"abc")            |
+	| 8 None Type        |  NoneType    | Represents absence of value                       |  result = None                      |
+
+
+	Data Type:			Type Casting:	- Changing the type of data
+	``````````			`````````````
+	print(type(x))		x = int("3")		
+
+4. Operations: 
+``````````````
+	Operator is the tool, operation is the action.
+	- The action performed using an operator or method.
+		Example: addition, comparison, appending, slicing
+
+	1. String Operations 
+
+		|   Operation      |   Description                                  |   Example                          |
+		| ---------------- | ---------------------------------------------- | ---------------------------------- |
+		|  ' '  /  " "     | Define a string                                |  'Hello' ,  "World"                |
+		|  len()           | Length of the string                           |  len("Python") → 6                 |
+		|  in ,  not in    | Check if a substring exists                    |  "a" in "cat" → True               |
+		| Indexing         | Access character by position                   |  "Hello"[1] → 'e'                  |
+		| Slicing          | Access part of the string                      |  "Hello"[1:4] → 'ell'              |
+		|  upper()         | Convert to uppercase                           |  "hi".upper() → "HI"               |
+		|  lower()         | Convert to lowercase                           |  "HI".lower() → "hi"               |
+		|  capitalize()    | Capitalize first character                     |  "python".capitalize() → "Python"  |
+		|  strip()         | Remove whitespace from both ends               |  "  hi  ".strip() → "hi"           |
+		|  replace()       | Replace parts of a string                      |  "hi".replace("h", "H") → "Hi"     |
+		|  split()         | Split into list by delimiter                   |  "a,b".split(",") → ['a', 'b']     |
+		|  format()        | Format strings with placeholders  {}           |  "Hello {}".format("World")        |
+		|  find()          | Find first occurrence of substring             |  "apple".find("p") → 1             |
+		|  rfind()         | Find last occurrence of substring              |  "banana".rfind("a") → 5           |
+		|  index()         | Like  find()  but raises error if not found    |  "abc".index("b") → 1              |
+		|  startswith()    | Check if string starts with value              |  "apple".startswith("a") → True    |
+		|  endswith()      | Check if string ends with value                |  "apple".endswith("e") → True      |
+		|  isalpha()       | Check if all characters are letters            |  "abc".isalpha() → True            |
+		|  isdigit()       | Check if all characters are digits             |  "123".isdigit() → True            |
+		|  isalnum()       | Check if all characters are alphanumeric       |  "abc123".isalnum() → True         |
+		|  isupper()       | Check if all characters are uppercase          |  "HELLO".isupper() → True          |
+		|  islower()       | Check if all characters are lowercase          |  "hello".islower() → True          |
+		|  join()          | Join iterable into string                      |  ",".join(["a", "b"]) → "a,b"      |
+		|  zfill()         | Pad string on the left with zeros              |  "7".zfill(3) → "007"              |
+		| Escape Sequences | Special characters: newline, tab, quotes, etc. |  \n ,  \t ,  \' ,  \\ ,  \"        |
+
+	2. List Operations
+
+		|   Operation          |   Description                                     |   Example                             |
+		| -------------------- | ------------------------------------------------- | ------------------------------------- |
+		|  len()               | Get number of items in the list                   |  len([1, 2, 3]) → 3                   |
+		|  in ,  not in        | Check if item exists in the list                  |  "apple" in fruits → True             |
+		| Indexing             | Access item by index                              |  fruits[0] → "apple"                  |
+		| Slicing              | Get sublist by range                              |  fruits[1:3] → ['banana', 'mango']    |
+		|  count()             | Count occurrences of an item                      |  fruits.count("apple") → 2            |
+		|  index()             | Find index of the first matching item             |  fruits.index("banana") → 1           |
+		| Change Item          | Modify item by index                              |  fruits[1] = "grape"                  |
+		|  insert()            | Insert item at a specific index                   |  fruits.insert(2, "melon")            |
+		|  append()            | Add item to the end of the list                   |  fruits.append("kiwi")                |
+		|  extend()            | Add multiple items from another list              |  fruits.extend(["peach", "plum"])     |
+		|  remove()            | Remove first occurrence of an item                |  fruits.remove("apple")               |
+		|  pop()               | Remove item at index or last if no index provided |  fruits.pop(1) ,  fruits.pop()        |
+		|  del                 | Delete item by index or entire list               |  del fruits[1] ,  del fruits          |
+		|  clear()             | Remove all items from the list                    |  fruits.clear()                       |
+		|  sort()              | Sort list in ascending order                      |  fruits.sort()                        |
+		|  sort(reverse=True)  | Sort list in descending order                     |  fruits.sort(reverse=True)            |
+		|  reverse()           | Reverse the list order                            |  fruits.reverse()                     |
+		|  copy()              | Create a shallow copy of the list                 |  new_list = fruits.copy()             |
+		| List Comprehension   | Create list using loop and condition              |  [x for x in range(5) if x % 2 == 0]  |
+
+	3. Set Operations
+
+		|   Operation              |   Description                                  |   Example                     |
+		| ------------------------ | ---------------------------------------------- | ----------------------------- |
+		|  add()                   | Adds an element to the set                     |  s.add(5)                     |
+		|  update()                | Adds multiple elements                         |  s.update([1, 2, 3])          |
+		|  remove()                | Removes element; error if not found            |  s.remove(2)                  |
+		|  discard()               | Removes element if present; no error if absent |  s.discard(10)                |
+		|  pop()                   | Removes a random element                       |  s.pop()                      |
+		|  clear()                 | Removes all elements                           |  s.clear()                    |
+		|  union()                 | Returns union of two sets                      |  s1.union(s2)                 |
+		|  intersection()          | Returns common elements                        |  s1.intersection(s2)          |
+		|  difference()            | Returns items only in first set                |  s1.difference(s2)            |
+		|  symmetric_difference()  | Items in either, but not both sets             |  s1.symmetric_difference(s2)  |
+		|  issubset()              | Checks if set is subset                        |  s1.issubset(s2)              |
+		|  issuperset()            | Checks if set is superset                      |  s1.issuperset(s2)            |
+		|  isdisjoint()            | Checks if sets have no items in common         |  s1.isdisjoint(s2)            |
+
+	4. Tuple Operations 
+
+		|   Operation   |   Description                          |   Example                 |
+		| ------------- | -------------------------------------- | ------------------------- |
+		| Indexing      | Access item by index                   |  t[1] → 'banana'          |
+		| Slicing       | Access a range of items                |  t[1:3]                   |
+		|  count()      | Count occurrences of a value           |  t.count("apple") → 2     |
+		|  index()      | Find index of a value                  |  t.index("banana") → 1    |
+		|  in           | Check if value exists                  |  "apple" in t → True      |
+		|  len()        | Length of tuple                        |  len(t) → 3               |
+		| Immutability  | Cannot be modified after creation      |  t[0] = "new"  ❌ Error   |
+		| Nesting       | Tuples can contain lists, other tuples |  t = (1, [2, 3], (4, 5))  |
+
+	5. Dictionary Operations
+		|   Operation   |   Description                                     |   Example                |
+		| ------------- | ------------------------------------------------- | ------------------------ |
+		|  get()        | Gets value by key (returns None if not found)     |  d.get("name")           |
+		|  keys()       | Returns list-like view of all keys                |  d.keys()                |
+		|  values()     | Returns list-like view of all values              |  d.values()              |
+		|  items()      | Returns view of key-value pairs                   |  d.items()               |
+		|  update()     | Updates dictionary with another dict or key-value |  d.update({"age": 30})   |
+		|  pop()        | Removes key and returns its value                 |  d.pop("name")           |
+		|  popitem()    | Removes and returns last key-value pair           |  d.popitem()             |
+		|  del          | Deletes key or entire dict                        |  del d["name"] ,  del d  |
+		|  clear()      | Empties the dictionary                            |  d.clear()               |
+		|  in           | Check if key exists                               |  "name" in d → True      |
+		| Indexing      | Access or assign value with key                   |  d["name"] = "Ali"       |
+
+	6. File Operations
+
+	|   Operation    |   Description                                            |   Example                      |
+	| -------------- | -------------------------------------------------------- | ------------------------------ |
+	|  open()        | Opens a file ( 'r' ,  'w' ,  'a' ,  'rb' ,  'wb' , etc.) |  f = open("file.txt", "r")     |
+	|  read()        | Reads entire file content                                |  f.read()                      |
+	|  readline()    | Reads one line                                           |  f.readline()                  |
+	|  readlines()   | Reads all lines into a list                              |  f.readlines()                 |
+	|  write()       | Writes content (overwrites in  'w'  mode)                |  f.write("Hello")              |
+	|  writelines()  | Writes a list of strings to a file                       |  f.writelines(["a\n", "b\n"])  |
+	|  close()       | Closes the file                                          |  f.close()                     |
+	|  with open()   | Context manager to open file (auto-close)                |  with open("file.txt") as f:   |
+	|  seek()        | Move the file cursor to given position                   |  f.seek(0)                     |
+	|  tell()        | Returns current file position                            |  f.tell()                      |
+	|  flush()       | Force write buffer to disk                               |  f.flush()                     |
+
+5. Operators: 
+`````````````
+	Operator is the tool, operation is the action.
+	- A symbol used to perform a specific action.
+			Example: +, -, *, ==, in
 	- used to perform operations on variables and values
 
- Arithmetic Operator	- Numeric values to perform common Mathematical Operations
- 			 + , - , * , / , % , ** , // 
+	1. Arithmetic Operator	
+			- Numeric values to perform common Mathematical Operations
+				
+				+ , - , * , / , % , ** , // 
 
-	| Operator | Name           | Description                               | Example        |
-	| -------- | -------------- | ----------------------------------------- | -------------- |
-	|  +       | Addition       | Adds two values                           | 3 + 2 = 5     |
-	|  -       | Subtraction    | Subtracts right operand from left         |  5 - 2 = 3     |
-	|  *       | Multiplication | Multiplies both values                    |  4 * 3 = 12    |
-	|  /       | Division       | Divides left by right (float result)      |  10 / 4 = 2.5  |
-	|  //      | Floor Division | Divides and removes decimal (rounds down) |  10 // 4 = 2   |
-	|  %       | Modulo         | Returns remainder                         |  10 % 3 = 1    |
-	|  **      | Exponentiation | Power of (left raised to right)           |  2 ** 3 = 8    |
+		| Operator | Name           | Description                               | Example        |
+		| -------- | -------------- | ----------------------------------------- | -------------- |
+		|  +       | Addition       | Adds two values                           | 3 + 2 = 5     |
+		|  -       | Subtraction    | Subtracts right operand from left         |  5 - 2 = 3     |
+		|  *       | Multiplication | Multiplies both values                    |  4 * 3 = 12    |
+		|  /       | Division       | Divides left by right (float result)      |  10 / 4 = 2.5  |
+		|  //      | Floor Division | Divides and removes decimal (rounds down) |  10 // 4 = 2   |
+		|  %       | Modulo         | Returns remainder                         |  10 % 3 = 1    |
+		|  **      | Exponentiation | Power of (left raised to right)           |  2 ** 3 = 8    |
+				
+	2. Assignment Operator	
+			- Assign values to Variables 
+				
+				= , += , -=, *= , /=, %=, **=, //= , &= , |= , ^= , >>= , <<= 
 
+		| Operator | Name                | Description       | Example   |   
+		| -------- | ------------------- | ----------------- | --------- | 
+		|  =       | Assignment          | Assigns value     |  x = 5    |     
+		|  +=      | Add AND assign      |  x = x + 3        |  x += 3   |    
+		|  -=      | Subtract AND assign |  x = x - 2        |  x -= 2   |     
+		|  *=      | Multiply AND assign |  x = x * 4        |  x *= 4   |   
+		|  /=      | Divide AND assign   |  x = x / 2        |  x /= 2   |  
+		|  //=     | Floor divide assign |  x = x // 2       |  x //= 2  |  
+		|  %=      | Modulo AND assign   |  x = x % 2        |  x %= 2   |   
+		|  **=     | Power AND assign    |  x = x ** 2       |  x **= 2  |    
+		|  &=      | Bitwise AND assign  |  x = x & 1        |  x &= 1   |   
+		|  |=      | Bitwise OR assign   |  x = x | 2        |  x |= 2   | 
+		|  ^=      | Bitwise XOR assign  |  x = x ^ 3        |  x ^= 3   |     
+		|  >>=     | Right shift assign  |  x = x >> 1       |  x >>= 1  |    
+		|  <<=     | Left shift assign   |  x = x << 1       |  x <<= 1  |    
+	
+	3. Comparison Operator	
+			- Compare two values
+				
+				== , != , > , < , >= , <=
+
+		| Operator | Description              | Example  |
+		| -------- | ------------------------ | -------- |
+		|  ==      | Equal to                 |  x == y  |
+		|  !=      | Not equal to             |  x != y  |
+		|  >       | Greater than             |  x > y   |
+		|  <       | Less than                |  x < y   |
+		|  >=      | Greater than or equal to |  x >= y  |
+		|  <=      | Less than or equal to    |  x <= y  |
+				
+	4. Logical Operator	
+			- Combine Conditional Statements
+				
+				and , or , not 
+
+		| Operator | Description                      | Example            |
+		| -------- | -------------------------------- | ------------------ |
+		|  and     | True if both conditions are True |  x > 2 and x < 10  |
+		|  or      | True if one condition is True    |  x < 5 or x > 20   |
+		|  not     | Reverses the condition           |  not(x == 5)       |
+				
+	5. Identity Operator	
+			- Compare the objects
+				
+				is , is not
+
+		| Operator | Description                                 | Example      |
+		| -------- | ------------------------------------------- | ------------ |
+		|  is      | True if both variables point to same object |  x is y      |
+		|  is not  | True if they don't point to same object     |  x is not y  |
+				
+	6. Membership Operator	
+			- Test is a sequence is present
+				
+				in , not in
+
+		| Operator | Description                   | Example            |
+		| -------- | ----------------------------- | ------------------ |
+		|  in      | True if value is in sequence  |  "a" in "apple"    |
+		|  not in  | True if value not in sequence |  "z" not in "dog"  |
+
+	7. Bitwise Operator	
+ 		- Compare Binary Numbers
+ 			
+			 & , | , ^ , ~ , << , >>
 			
- Assignment Operator	- Assign values to Variables 
- 			 = , += , -=, *= , /=, %=, **=, //= , &= , |= , ^= , >>= , <<= 
+		| Operator | Description        | Example (in binary)       |     
+		| -------- | ------------------ | ------------------------- |
+		|  &       | AND                |  5 & 3 → 101 & 011 = 001  |    
+		|  |       | OR                 |  5 | 3 → 101 | 011 = 111  |                    
+		|  ^       | XOR (exclusive OR) |  5 ^ 3 → 101 ^ 011 = 110  |   
+		|  ~       | NOT (inverts bits) |  ~5 → -(5+1) = -6         |  
+		|  <<      | Left shift         |  2 << 1 → 4  (10 → 100)   |    
+		|  >>      | Right shift        |  4 >> 1 → 2  (100 → 10)   |    
 
-	| Operator | Name                | Description       | Example   |   
-	| -------- | ------------------- | ----------------- | --------- | 
-	|  =       | Assignment          | Assigns value     |  x = 5    |     
-	|  +=      | Add AND assign      |  x = x + 3        |  x += 3   |    
-	|  -=      | Subtract AND assign |  x = x - 2        |  x -= 2   |     
-	|  *=      | Multiply AND assign |  x = x * 4        |  x *= 4   |   
-	|  /=      | Divide AND assign   |  x = x / 2        |  x /= 2   |  
-	|  //=     | Floor divide assign |  x = x // 2       |  x //= 2  |  
-	|  %=      | Modulo AND assign   |  x = x % 2        |  x %= 2   |   
-	|  **=     | Power AND assign    |  x = x ** 2       |  x **= 2  |    
-	|  &=      | Bitwise AND assign  |  x = x & 1        |  x &= 1   |   
-	|  |=      | Bitwise OR assign   |  x = x | 2        |  x |= 2   | 
-	|  ^=      | Bitwise XOR assign  |  x = x ^ 3        |  x ^= 3   |     
-	|  >>=     | Right shift assign  |  x = x >> 1       |  x >>= 1  |    
-	|  <<=     | Left shift assign   |  x = x << 1       |  x <<= 1  |    
+6. Flow Control:
+`````````````````
+	1. Conditional Statement
+			- It lets the program decide which block of code to execute based on the condition. Decision making.
 
- 
- Comparison Operator	- Compare two values
- 			 == , != , > , < , >= , <=
+		|  Name      |  Definition                                          |  Syntax                 |  Example                            |
+		| ---------- | ---------------------------------------------------- | ----------------------- | ----------------------------------- |
+		|  if        | Runs a block of code if the condition is True        |  if condition:          |  if x > 10:\n    print("Big")       |
+		|  elif      | Runs if the  if  is False and this condition is True |  elif condition:        |  elif x == 10:\n    print("Equal")  |
+		|  else      | Runs if all above conditions are False               |  else:                  |  else:\n    print("Small")          |
+		| Ternary if | One-line conditional expression                      |  x if condition else y  |  result = "Yes" if x > 0 else "No"  |
 
-	| Operator | Description              | Example  |
-	| -------- | ------------------------ | -------- |
-	|  ==      | Equal to                 |  x == y  |
-	|  !=      | Not equal to             |  x != y  |
-	|  >       | Greater than             |  x > y   |
-	|  <       | Less than                |  x < y   |
-	|  >=      | Greater than or equal to |  x >= y  |
-	|  <=      | Less than or equal to    |  x <= y  |
+	2. Looping Statement
+			- Used to repeate a block of code multiple times.
 
-			
- Logical Operator	- Combine Conditional Statements
- 			 and , or , not 
+		|  Name    |  Definition                              |  Syntax                |  Example                           |
+		| -------- | ---------------------------------------- | ---------------------- | ---------------------------------- |
+		|  for     | Iterates over items in a sequence        |  for var in sequence:  |  for i in range(3):\n    print(i)  |
+		|  while   | Repeats code while the condition is True |  while condition:      |  while x < 5:\n    x += 1          |
 
-	| Operator | Description                      | Example            |
-	| -------- | -------------------------------- | ------------------ |
-	|  and     | True if both conditions are True |  x > 2 and x < 10  |
-	|  or      | True if one condition is True    |  x < 5 or x > 20   |
-	|  not     | Reverses the condition           |  not(x == 5)       |
+	3. Loop Control Statement
+			- Used to alter the flow of loops: exit early, skip iterations or do nothing.
 
-			
- Identity Operator	- Compare the objects
- 			 is , is not
+		|  Name          |  Definition                                       |  Syntax               |  Example                                     |
+		| -------------- | ------------------------------------------------- | --------------------- | -------------------------------------------- |
+		|  break         | Exits the loop immediately                        |  break                |  if x == 3:\n    break                       |
+		|  continue      | Skips the rest of the loop iteration              |  continue             |  if x % 2 == 0:\n    continue                |
+		|  pass          | Does nothing (placeholder)                        |  pass                 |  if True:\n    pass                          |
+		|  else  on loop | Executes if the loop was not exited using  break  |  for/while ... else:  |  for i in range(3): ... else: print("Done")  |
 
-	| Operator | Description                                 | Example      |
-	| -------- | ------------------------------------------- | ------------ |
-	|  is      | True if both variables point to same object |  x is y      |
-	|  is not  | True if they don't point to same object     |  x is not y  |
+	4. Exception Handling Statement
+			- Used to handle errors or unexpected conditions gracefully without crashing the program
 
-			
- Membership Operator	- Test is a sequence is present
- 			 in , not in
+		|  Name     |  Definition                              |  Syntax             |  Example                                        |
+		| --------- | ---------------------------------------- | ------------------- | ----------------------------------------------- |
+		|  try      | Block where an error might occur         |  try:               |  try:\n    x = 1 / 0                            |
+		|  except   | Block to handle the error                |  except ErrorType:  |  except ZeroDivisionError:\n    print("Error")  |
+		|  else     | Runs if  try  succeeds without exception |  else:              |  else:\n    print("No errors")                  |
+		|  finally  | Runs no matter what, error or no error   |  finally:           |  finally:\n    print("Cleanup")                 |
 
-	| Operator | Description                   | Example            |
-	| -------- | ----------------------------- | ------------------ |
-	|  in      | True if value is in sequence  |  "a" in "apple"    |
-	|  not in  | True if value not in sequence |  "z" not in "dog"  |
+	5. Match Statement
+			- Pattern matching allows matching values and executing corresponding code blocks, similar to switch in other languages.
 
+		|  Name    |  Definition                               |  Syntax           |  Example                        |
+		| -------- | ----------------------------------------- | ----------------- | ------------------------------- |
+		|  match   | Start of the pattern matching structure   |  match variable:  |  match status:                  |
+		|  case    | Handles each pattern                      |  case value:      |  case 200:\n    print("OK")     |
+		|  case _  | Catch-all case (like  default  in switch) |  case _:          |  case _:\n    print("Unknown")  |
 
- Bitwise Operator	- Compare Binary Numbers
- 			 & , | , ^ , ~ , << , >>
-			
-	| Operator | Description        | Example (in binary)       |     
-	| -------- | ------------------ | ------------------------- |
-	|  &       | AND                |  5 & 3 → 101 & 011 = 001  |    
-	|  |       | OR                 |  5 | 3 → 101 | 011 = 111  |                    
-	|  ^       | XOR (exclusive OR) |  5 ^ 3 → 101 ^ 011 = 110  |   
-	|  ~       | NOT (inverts bits) |  ~5 → -(5+1) = -6         |  
-	|  <<      | Left shift         |  2 << 1 → 4  (10 → 100)   |    
-	|  >>      | Right shift        |  4 >> 1 → 2  (100 → 10)   |    
+	6. Assert Statement
+		- Used to debugging. It tests if a condition is True; if not, it raises an AssertionError.
+
+	|  Name    |  Definition                  |  Syntax            |  Example                             |
+	| -------- | ---------------------------- | ------------------ | ------------------------------------ |
+	|  assert  | Tests if a condition is True |  assert condition  |  assert x > 0, "x must be positive"  |
 
 
 		
