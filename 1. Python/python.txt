@@ -1,6 +1,9 @@
 Python: 
 ```````
- - Popular Programming Language - Guido van Rossum in 1991 at CWI in the Netherlands
+ 	- Popular Programming Language - Guido van Rossum in 1991 at CWI in the Netherlands
+	- Python is an interpreted, high-level, general-purpose programming language.
+	- It is designed to be easy to read and write, with a focus on code readability and simplicity.	
+	- Python supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
 
 1. Reserved words or Keywords:
 2. Variable:
@@ -9,31 +12,37 @@ Python:
 5. Operators:
 6. Flow Control:
 7. Collection Data Types:
+8. Functions:
+9. Object Oriented Programming:
 
 [Qucik Search: Select -> Contol + f -> Enter]
 
 1. Reserved words or Keywords:
 ```````````````````````````````
-	- Keywords have special meanings to the compiler. There are 35 keywords.
-	
-	False		await		else		import		pass
-	None		break	   	except		in			raise
+
+	- Keywords have special meanings to the compiler. There are 37 keywords.
+	- They cannot be used as identifiers (variable names, function names, etc.)
+	- Keywords are case-sensitive, meaning that they must be written in lowercase.
+
+	False		await		else		import		pass		match
+	None		break	   	except		in			raise 		case
 	True		class	   	finally		is			return
 	and 		continue   	for			lambda		try
 	as 			def 	   	from		nonlocal	while
 	assert		del   	   	global		not			with
 	async		elif	   	if			or			yield
 
-	Value Keywords			- 	True, False, None
-	Operator Keywords		- 	and, or, not, in, is
-	Control Flow Keywords	- 	if, elif, else
-	Iteration Keywords		- 	for, while, break, continue
-	Structure Keywords		- 	def, class, with, pass, lambda
-	Returning Keywords		-	return, yield
-	Import Keywords			- 	import, from, as
+	Value Keywords				- 	True, False, None
+	Operator Keywords			- 	and, or, not, in, is
+	Control Flow Keywords		- 	if, elif, else, match, case
+	Iteration Keywords			- 	for, while, break, continue, pass
+	Structure Keywords			- 	def, class, with, lambda
+	Returning Keywords			-	return, yield
+	Import Keywords				- 	import, from, as
 	Exception-Handling Keywords -	try, except, raise, finally, assert
-	Asynchronous Keywords	    - 	async, await
+	Asynchronous Keywords	  	- 	async, await
 	Variable Handling Keywords  - 	del, global, nonlocal
+
 
 	True, False - Boolean value
 	Eg:
@@ -55,7 +64,7 @@ Python:
 	Cotainers for storing data values. 
 	Literals - Raw data assigned to a Variable or Constant
 	Python is a dynamically-typed language, and there is no built-in mechanism to enforce constant values.
-		
+	Variable naming rules (e.g., no starting with numbers, no special characters except _).	
 		- Python is case sensitive. Eg: y and Y are Different
 
 	name  = "Shiffana" 
@@ -64,6 +73,8 @@ Python:
 
 3. Data Types:
 ``````````````
+	- Data types are classifications of data that determine the kind of value a variable can hold and the operations that can be performed on it.
+	- Python is a dynamically typed language, meaning you don't need to declare the data type of a variable explicitly.
 	- In Python, there are several built-in data types that you can use to store different kinds of data. 
 		Here is a comprehensive list of all the data types in Python:
 
@@ -83,7 +94,7 @@ Python:
 	| 7 Binary Types     |  bytes       | Immutable byte sequence                           |  b = b"hello"                       |
 	|                    |  bytearray   | Mutable byte sequence                             |  ba = bytearray(b"data")            |
 	|                    |  memoryview  | View over byte data                               |  mv = memoryview(b"abc")            |
-	| 8 None Type        |  NoneType    | Represents absence of value                       |  result = None                      |
+	| 8 None Type        |  NoneType    | Represents absence of value                       |  result = None ; type(None)         |
 
 
 	Data Type:			Type Casting:	- Changing the type of data
@@ -92,9 +103,9 @@ Python:
 
 4. Operations: 
 ``````````````
-	Operator is the tool, operation is the action.
-	- The action performed using an operator or method.
-		Example: addition, comparison, appending, slicing
+	- Operations are actions performed on data types using operators or methods.
+	- They allow you to manipulate, compare, and transform data.
+	- Tuples and dictionaries support indexing and key-based access
 
 	1. String Operations 
 
@@ -212,12 +223,11 @@ Python:
 	|  tell()        | Returns current file position                            |  f.tell()                      |
 	|  flush()       | Force write buffer to disk                               |  f.flush()                     |
 
-5. Operators: 
-`````````````
-	Operator is the tool, operation is the action.
-	- A symbol used to perform a specific action.
-			Example: +, -, *, ==, in
-	- used to perform operations on variables and values
+5. Operators:
+``````````````
+	- Operators are symbols that perform operations on variables and values.
+	- They are used to manipulate data and variables in Python.
+	- Operators can be classified into several categories based on their functionality.
 
 	1. Arithmetic Operator	
 			- Numeric values to perform common Mathematical Operations
@@ -316,6 +326,10 @@ Python:
 
 6. Flow Control:
 `````````````````
+	- Flow control statements determine the order in which statements are executed in a program.
+	- They allow you to control the flow of execution based on conditions, loops, and exceptions.
+	- Flow control statements are essential for making decisions, repeating actions, and handling errors in your code.
+
 	1. Conditional Statement
 			- It lets the program decide which block of code to execute based on the condition. Decision making.
 
@@ -372,6 +386,11 @@ Python:
 		
 7. Collection Data Types:
 ``````````````````````````
+	- Collection data types are used to store multiple items in a single variable.
+	- They allow you to group related data together and perform operations on the entire collection.	
+	- Python has several built-in collection data types, each with its own characteristics and use cases.
+
+
 	| Type          | Ordered | Mutable | Allows Duplicates | Unique Feature                     | Example                        |
 	| ------------- | ------- | ------- | ----------------- | ---------------------------------- | ------------------------------ |
 	|   List        |   Yes   |   Yes   |   Yes             | Ideal for ordered, changeable data | `["a", "b", "c"]`              |
@@ -380,7 +399,95 @@ Python:
 	|   Frozenset   |   No    |   No    |   No              | Immutable version of set           | `frozenset(["a", "b", "c"])`   |
 	|   Dict        |   Yes   |   Yes   |   (Keys)          | Key-value pairs                    | `{"name": "Alice", "age": 25}` |
 
+	1. List – Use when you need a dynamic and ordered collection (e.g., shopping list).
+	2. Tuple – Use when the data should not change (e.g., GPS coordinates).
+	3. Set – Use when you want to store unique values (e.g., removing duplicates).
+	4. Dictionary – Use when you want to map keys to values (e.g., storing employee data).
+	5. frozenset – Use when you want a constant set (e.g., as a dictionary key or for hashable needs).
 
+8. Functions:
+`````````````
+	- Functions are reusable blocks of code that perform a specific task.
+	- They help organize code, avoid repetition, and make it easier to read and maintain.	
+	- Functions can take inputs (parameters) and return outputs (return values).
+
+	Concept	Explanation	Example
+	Function Definition	Define a function using def keyword	def greet():
+		print('Hello')
+	Function Call	Execute a function	greet()
+	Parameters	Variables in function definition	def greet(name):
+		print('Hello', name)
+	Arguments	Values passed to a function	greet('Shiffana')
+	Return Statement	Return a value to the caller	def add(a, b):
+		return a + b
+	Default Parameters	Parameter with default value	def greet(name='Guest'):
+		print('Hello', name)
+	Keyword Arguments	Pass values using parameter names	def student(name, age):
+		print(name, age)
+	student(age=20, name='Ali')
+	*args	Accept multiple positional arguments	def show(*args):
+		for i in args:
+			print(i)
+	**kwargs	Accept multiple keyword arguments	def show(**kwargs):
+		for k, v in kwargs.items():
+			print(k, v)
+	Lambda Function	Anonymous one-line function	square = lambda x: x**2
+	print(square(4))
+	Scope	Local vs Global variables	x = 10
+	def test():
+		x = 5
+		print(x)
+	test()
+	print(x)
+	Docstring	Function description string	def greet():
+		"""This says hello."""
+		print('Hi')
+	print(greet.__doc__)
+	Recursion	A function calling itself	def fact(n):
+		if n==0: return 1
+		return n * fact(n-1)
+	Function Annotations	Used for type hinting	def add(a: int, b: int) -> int:
+		return a + b
+	Nested Functions	Function defined inside another	def outer():
+		def inner():
+			print('Hi')
+		inner()
+	Closures	Function remembers its enclosing scope	def outer():
+		msg = 'Hi'
+		def inner():
+			print(msg)
+		return inner
+	Decorators	Modifies another function	def deco(func):
+		def wrap():
+			print('Before')
+			func()
+		return wrap
+	nonlocal	Modify outer variable from inner	def outer():
+		x = 'old'
+		def inner():
+			nonlocal x
+			x = 'new'
+		inner()
+		print(x)
+	Higher-order Functions	Takes/returns other functions	def apply(func, val):
+		return func(val)
+	apply(lambda x: x*2, 5)
+
+
+	| **Topic**                   | **Explanation**                          | **Code Example**                                                                    |
+	| --------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------- |
+	| **Function Definition**     | Define a function using `def` keyword    | `def greet():\n    print("Hello")`                                                  |
+	| **Function Call**           | Execute a function                       | `greet()`                                                                           |
+	| **Parameters**              | Variables in function definition         | `def greet(name):\n    print("Hello", name)`                                        |
+	| **Arguments**               | Values passed to a function              | `greet("Shiffana")`                                                                 |
+	| **Return Statement**        | Return a value to caller                 | `def add(a, b):\n    return a + b`                                                  |
+	| **Default Parameters**      | Parameter with default value             | `def greet(name="Guest"):\n    print("Hello", name)`                                |
+	| **Keyword Arguments**       | Pass values using parameter names        | `def student(name, age):\n    print(name, age)\n\nstudent(age=20, name="Ali")`      |
+	| **`*args` (Positional)**    | Accept multiple positional args          | `def show(*args):\n    for i in args:\n        print(i)`                            |
+	| **`**kwargs` (Keyword)**    | Accept multiple keyword args             | `def show(**kwargs):\n    for k, v in kwargs.items():\n        print(k, v)`         |
+	| **Lambda Function**         | Anonymous one-line function              | `square = lambda x: x**2\nprint(square(4))`                                         |
+	| **Scope (Local vs Global)** | Local variables are inside function only | `x = 10\n\ndef test():\n    x = 5\n    print(x)\n\ntest()\nprint(x)`                |
+	| **Docstring**               | Function description string              | `def greet():\n    """This says hello."""\n    print("Hi")\n\nprint(greet.__doc__)` |
 
 Object Oriented Programming:
 ```````````````````````````
