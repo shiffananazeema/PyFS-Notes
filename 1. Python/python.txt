@@ -527,3 +527,39 @@ Polymorphism:
 In Python, you can use these OOP concepts to create reusable, modular, and maintainable code that is easier to understand and debug. 
 OOP can be a powerful tool for solving complex programming problems and building robust software systems.
     
+Collections Module:
+``````````````````````
+  - The `collections` module provides specialized container datatypes that extend the built-in types like `list`, `dict`, and `set`.
+  - These data structures are optimized for specific use cases, making them more efficient and easier to use in certain scenarios.
+```python
+from collections import Counter, defaultdict, deque, namedtuple, OrderedDict, ChainMap, UserDict
+
+| Collection Type | Import & Example Code                                                            | Purpose / Description                                                                                   | Example Output                               |
+| --------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| `Counter`       | `from collections import Counter`<br>`Counter("apple")`                          | 🧮 Counts how many times each item appears in a collection                                              | `{'p': 2, 'a': 1, 'l': 1, 'e': 1}`           |
+| `defaultdict`   | `from collections import defaultdict`<br>`d = defaultdict(int)`<br>`d['a'] += 1` | 🔧 Like a normal `dict`, but returns a **default value** when accessing missing keys                    | `{'a': 1, 'b': 0}`                           |
+| `deque`         | `from collections import deque`<br>`dq = deque([1, 2])`<br>`dq.appendleft(0)`    | ↔️ Double-ended queue – fast adding/removing from **both ends**                                         | `deque([0, 1, 2])`                           |
+| `namedtuple`    | `from collections import namedtuple`<br>`Point = namedtuple("Point", "x y")`     | 🏷 A tuple with **named fields** – acts like a lightweight class                                        | `p = Point(1, 2)` → access like `p.x`, `p.y` |
+| `OrderedDict`   | `from collections import OrderedDict`<br>`od = OrderedDict()`                    | 📋 Dictionary that remembers the **insertion order** (Note: normal `dict` does this in Python 3.7+)     | `{'a': 1, 'b': 2}`                           |
+| `ChainMap`      | `from collections import ChainMap`<br>`cm = ChainMap(dict1, dict2)`              | 🔗 Combines multiple dicts into a single view – reads from first, falls back to second if key not found | `{'a': 1, 'b': 2}` (combined from 2 dicts)   |
+| `UserDict`      | `from collections import UserDict`<br>`class MyDict(UserDict): pass`            | 📖 Custom dictionary class that extends `dict` functionality                                          | `MyDict({'a': 1})`                            |
+
+Counter: 
+| Task / Feature                   | Example Code                      | Output / Description                                                 |                                                                                    |
+| -------------------------------- | --------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **1. Count elements**            | `Counter("banana")`               | `Counter({'a': 3, 'n': 2, 'b': 1})` – counts each character          |                                                                                    |
+| **2. Get count of a value**      | `c['a']`                          | `3` – returns how many times `'a'` appears                           |                                                                                    |
+| **3. Safe access (missing key)** | `c['z']`                          | `0` – returns `0` if the item does not exist (no error)              |                                                                                    |
+| **4. List all items**            | `c.items()`                       | `dict_items([('b', 1), ('a', 3), ('n', 2)])`                         |                                                                                    |
+| **5. List all keys only**        | `c.keys()`                        | `dict_keys(['b', 'a', 'n'])`                                         |                                                                                    |
+| **6. List all counts only**      | `c.values()`                      | `dict_values([1, 3, 2])`                                             |                                                                                    |
+| **7. Most common N items**       | `c.most_common(2)`                | `[('a', 3), ('n', 2)]` – top 2 most frequent items                   |                                                                                    |
+| **8. All elements expanded**     | `list(c.elements())`              | `['b', 'a', 'a', 'a', 'n', 'n']` – repeats each item by its count    |                                                                                    |
+| **9. Add two Counters**          | `Counter("abc") + Counter("bcd")` | `Counter({'b': 2, 'c': 2, 'a': 1, 'd': 1})`                          |                                                                                    |
+| **10. Subtract Counters**        | `Counter("abc") - Counter("bcd")` | `Counter({'a': 1})` – subtracts counts, removes negatives            |                                                                                    |
+| **11. Minimum (Intersection)**   | `Counter("abc") & Counter("bcd")` | `Counter({'b': 1, 'c': 1})` – keeps the lower count for common items |                                                                                    |
+| **12. Maximum (Union)**          | \`Counter("abc")                  | Counter("bcd")\`                                                     | `Counter({'b': 1, 'c': 1, 'a': 1, 'd': 1})` – keeps the higher count for each item |
+| **13. Update with more data**    | `c.update("ana")`                 | Adds counts from "ana" to the existing Counter                       |                                                                                    |
+| **14. Delete an item**           | `del c['a']`                      | Removes the item `'a'` entirely from the Counter                     |                                                                                    |
+| **15. Clear all counts**         | `c.clear()`                       | Empties the Counter, making it empty                                 |                                                                                    |
+| **16. Convert to dict**          | `dict(c)`                         | Converts Counter to a regular dictionary                             |                                                                                    |

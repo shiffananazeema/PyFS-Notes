@@ -80,4 +80,119 @@
 # else:
 #     print("Enter valid value")
     
+# 4. Fruit basket
 
+# basket = []
+# print("Options: add, remove, show, clear, exit")
+
+# while True:
+#     command = input("Enter command: ")
+#     if command == 'exit':
+#         print("\nThanks for using the basket!\n")
+#         break
+#     elif command == 'add':
+#         f_add = input("Enter fruit name: ").lower()
+#         if f_add in basket:
+#             print(f"'{f_add}' is already in the basket")
+#         else:
+#             basket.append(f_add)
+#             print(f"'{f_add}' is added.")
+#     elif command == 'show':
+#         print(f"Current basket: {basket}")
+#     elif command == 'remove':
+#         f_remove = input("Enter fruit name: ").lower()
+#         if f_remove in basket:
+#             basket.remove(f_remove)
+#             print(f"'{f_remove}' is removed from the basket.")
+#         else:
+#             print(f"'{f_remove}' is not in the basket.")
+#     elif command == 'clear':
+#         basket.clear()
+#         print("The basket is empty")
+#     else:
+#         print("Enter valid command")
+
+# 5. 5 Fruit
+
+# fruits = []
+
+# for i in range(5):
+#     fruit = input(f"Enter fruit {i+1}: ").lower()
+#     fruits.append(fruit)
+
+# for fruit in fruits:
+#     if fruits.count(fruit) > 1:
+#         print(f"\n{fruit} is repeated!.\n")
+#         break
+# else:
+#     print("\nAll fruits are unique.\n")
+
+# 6. Missing number
+
+# length = int(input("Enter the length: "))
+# values = []
+
+# for i in range(length):
+#     value=int(input(f"Enter value {i+1}: "))
+#     values.append(value)
+
+# n = len(values) + 1
+# expected = n * (n + 1) // 2
+# actual= sum(values)
+
+# missing = expected - actual
+
+# print(f"Missing number is {missing}")
+
+# 7. Largest number
+
+# values = [int(i) for i in input("Enter values: ").split()]
+# unique = list(set(values))
+# unique.sort(reverse=True)
+# print(unique[1])
+
+# values = [int(i) for i in input("Enter values: ").split()]
+
+# first = second = float('-inf')  # set to very low
+
+# for num in values:
+#     if num > first:
+#         second = first
+#         first = num
+#     elif num > second and num != first:
+#         second = num
+
+# print("Second largest:", second)
+
+# 8. frequent number in list
+
+# from collections import Counter
+
+# values = [int(i) for i in input("Enter value: ").split()]
+# counts = Counter(values)
+
+# num , c = counts.most_common(1)[0]
+
+# print(f"{num} is repeated {c} times")
+
+# for num, c in counts.items():
+#     if c > 1:
+#         print(f"{num} is repeated {c} times")
+
+values = [int(i) for i in input("Enter value: ").split()]
+
+frequency = {}
+
+for i in values:
+    if i in frequency:
+        frequency[i] += 1
+    else:
+        frequency[i] = 1
+max_count = 0
+most_frequent = None
+
+for key, value in frequency.items():
+    if value > max_count:
+        max_count = value
+        most_frequent = key
+print(f"{most_frequent} is repeated {max_count} times")
