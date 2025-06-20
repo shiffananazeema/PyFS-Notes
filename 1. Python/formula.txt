@@ -9,13 +9,16 @@ sum of arithmetic series - (n * (2 * a + (n - 1) * d)) // 2
 sum of geometric series  - a * (1 - r**n) // (1 - r) if r != 1 else a * n
 gcd                      - import math  math.gcd(a, b)
 lcm                      - import math  (a * b) // math.gcd(a, b)
-factorial                - import math  math.factorial(n)
+factorial                - import math  math.factorial(n) / f=1 for i in range(2, n+1): f *= i
 fibonacci                - def fib(n): a, b = 0, 1; for _ in range(n): a, b = b, a + b; return a
 is_palindrome            - str(n) == str(n)[::-1]
 is_anagram               - sorted(str(a)) == sorted(str(b))
 is_armstrong             - sum(int(d)**3 for d in str(n)) == n # for 3-digit numbers
+is_adam_number          - n == sum(int(d)**len(str(n)) for d in str(n))  # for n-digit numbers
 is_perfect_square        - int(n**0.5) ** 2 == n
-is_prime                 - all(n % i != 0 for i in range(2, int(n**0.5) + 1))
+is_prime                 - print("True" if n > 1 and all(n % i != 0 for i in range(2, int(n**0.5) + 1)) else "False")
+is_fibonacci             - def is_fib(n): a, b = 0, 1; while a < n: a, b = b, a + b; return a == n
+is_perfect_number        - n == sum(i for i in range(1, n) if n % i == 0)
 count_set_bits           - bin(n).count('1')
 count_trailing_zeros     - len(bin(n)) - len(bin(n).rstrip('0'))
 
