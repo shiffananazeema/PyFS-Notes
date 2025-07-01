@@ -14,6 +14,7 @@ Python:
 7. Collection Data Types:
 8. Functions:
 9. Object Oriented Programming:
+10. File Handling:
 
 [Qucik Search: Select -> Contol + f -> Enter]
 
