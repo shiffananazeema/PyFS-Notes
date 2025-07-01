@@ -535,6 +535,82 @@ Python:
 	- In Python, you can use these OOP concepts to create reusable, modular, and maintainable code that is easier to understand and debug. 
 	- OOP can be a powerful tool for solving complex programming problems and building robust software systems.
     
+10. File Handling:
+````````````````
+	- File handling in Python allows you to read from and write to files on your system.
+	- It is essential for data persistence, allowing you to store and retrieve information between program runs.
+	- Python provides built-in functions and methods for file operations, making it easy to work with files.
+
+	|   Concept              |   Explanation                                 |   Use Case              |   Example                                                  |
+	| ---------------------- | --------------------------------------------- | ----------------------- | ---------------------------------------------------------- |
+	|   Opening a File       | Use  open()  to open a file                   | Access or create a file |  python\nf = open("file.txt", "r")                         |
+	|   Reading a File       |  read() ,  readline() ,  readlines()  methods | Load file contents      |  python\ncontent = f.read()                                |
+	|   Writing to a File    | Use  "w"  (overwrite) or  "a"  (append) mode  | Save data to file       |  python\nf = open("file.txt", "w")\nf.write("Hello")       |
+	|   Closing a File       | Always close using  close()  or use  with     | Free system resources   |  python\nf.close()                                         |
+	|   Using  with  block   | Automatically closes file                     | Safer and cleaner code  |  python\nwith open("file.txt") as f:\n    data = f.read()  |
+		
+	|   File Modes           |   Description                                 |   Example                                                  |
+	| ---------------------- | --------------------------------------------- | ---------------------------------------------------------- |
+	|  "r"                   | Read mode (default)                           |  python\nf = open("file.txt", "r")                         |
+	|  "w"                   | Write mode (overwrites existing content)      |  python\nf = open("file.txt", "w")                         |
+	|  "a"                   | Append mode (adds to end of file)             |  python\nf = open("file.txt", "a")                         |
+	|  "b"                   | Binary mode (for non-text files)              |  python\nf = open("image.png", "rb")                       |
+	|  "x"                   | Exclusive creation (fails if file exists)     |  python\nf = open("newfile.txt", "x")                      |
+	|  "t"                   | Text mode (default, can be omitted)           |  python\nf = open("file.txt", "rt")                        |
+	|  "r+"                  | Read and write mode (file must exist)         |  python\nf = open("file.txt", "r+")                         |
+	|  "w+"                  | Write and read mode (overwrites existing)     |  python\nf = open("file.txt", "w+")                         |
+	|  "a+"                  | Append and read mode (creates if not exists)  |  python\nf = open("file.txt", "a+")                         |
+	
+	
+	|   File Methods         |   Description                                 |   Example                                                  |
+	| ---------------------- | --------------------------------------------- | ---------------------------------------------------------- |
+	|  read(size)            | Reads up to  size  bytes                      |  python	\ncontent = f.read(10)                                |
+	|  readline()            | Reads one line from the file                  |  python\nline = f.readline()                                |
+	|  readlines()           | Reads all lines into a list                   |  python\nlines = f.readlines()                               |
+	|  write(string)         | Writes a string to the file                   |  python\n	f.write("Hello World")                           |
+	|  writelines(list)      | Writes a list of strings to the file			 |  python\nf.writelines(["Line 1\n", "Line 2\n"])             |		
+	|  tell()                | Returns current file position                  |  python\npos = f.tell()                                     |
+	|  seek(offset, whence)  | Moves file pointer to a new position           |  python\nf.seek(0)                                         |
+	|  flush()               | Flushes the internal buffer to the file       |  python\nf.flush()                                          |
+	|  truncate(size)        | Resizes the file to  size  bytes               |  python\nf.truncate(100)                                    |
+	|  isfile(path)          | Checks if a file exists                        |  python\nimport os\nos.path.isfile("file.txt")              |
+	|  isdir(path)           | Checks if a directory exists                   |  python\nimport os\nos.path.isdir("mydir")                   |
+	|  exists(path)          | Checks if a file or directory exists          |  python\nimport os\nos.path.exists("file.txt")               |
+	|  remove(path)          | Deletes a file                                 |  python\nimport os\nos.remove("file.txt")                    |
+	|  rename(old, new)      | Renames a file or directory                    |  python\nimport os\nos.rename("old.txt", "new.txt")           |	
+	|  mkdir(path)           | Creates a new directory                        |  python\nimport os\nos.mkdir("newdir")                         |
+	|  rmdir(path)           | Removes an empty directory                     |  python\nimport os\nos.rmdir("emptydir")                         |
+	|  listdir(path)         | Lists files and directories in a directory    |  python\nimport os\nfiles = os.listdir("mydir")                 |
+	|  getsize(path)         | Returns the size of a file in bytes            |  python\nimport os\nsize = os.path.getsize("file.txt")          |	
+	|  getmtime(path)        | Returns last modified time of a file           |  python\nimport os\nmtime = os.path.getmtime("file.txt")        |
+	|  getatime(path)        | Returns last access time of a file             |  python\nimport os\natime = os.path.getatime("file.txt")        |
+	|  getctime(path)        | Returns creation time of a file                |  python\nimport os\nctime = os.path.getctime("file.txt")        |
+	|  copy(src, dst)        | Copies a file from  src  to  dst               |  python\nimport shutil\nshutil.copy("file.txt", "copy.txt")     |
+	|  move(src, dst)        | Moves a file from  src  to  dst               |  python\nimport shutil\nshutil.move("file.txt", "newdir/")      |
+	|  chmod(path, mode)     | Changes file permissions                       |  python\nimport os\nos.chmod("file.txt", 0o644)                      |
+	|  chown(path, uid, gid) | Changes file owner and group                  |  python\nimport os\nos.chown("file.txt", uid, gid)                  |
+	|  stat(path)            | Returns file status information               |  python\nimport os\ninfo = os.stat("file.txt")                       |	
+	|  walk(top)             | Generates file names in a directory tree      |  python\nimport os\nfor dirpath, dirnames, filenames in os.walk("mydir"):\n    print(dirpath, dirnames, filenames)  |
+	|  tempfile              | Module for creating temporary files          |  python\nimport tempfile\nwith tempfile.TemporaryFile() as f:\n    f.write(b"Hello")\n    f.seek(0)\n    print(f.read())  |
+	|  os  Module            | Provides functions for file and directory operations |  python\nimport os\nos.listdir("mydir")                               |
+	|  shutil  Module        | High-level file operations like copy, move   | |  python\nimport shutil\nshutil.copy("file.txt", "copy.txt")           |
+	|  pathlib  Module       | Object-oriented file system paths           |  python\nfrom pathlib import Path\np = Path("file.txt")\nprint(p.exists())  |
+	|  json  Module          | Read/write JSON files                       |  python\nimport json\nwith open("data.json", "r") as f:\n    data = json.load(f)  |
+	|  csv  Module           | Read/write CSV files                        |  python\nimport csv\nwith open("data.csv", "r") as f:\n    reader = csv.reader(f)\n    for row in reader:\n        print(row)  |
+	|  pickle  Module        | Serialize/deserialize Python objects       |  python\nimport pickle\nwith open("data.pkl", "wb") as f:\n    pickle.dump(obj, f)  |
+	|  xml.etree.ElementTree | Read/write XML files                       |  python\nimport xml.etree.ElementTree as ET\n\nroot = ET.Element("root")\nchild = ET.SubElement(root, "child")\nchild.text = "Hello"\ntree = ET.ElementTree(root)\ntree.write("data.xml")  |
+	|  zipfile  Module       | Read/write ZIP files                        |  python\nimport zipfile\nwith zipfile.ZipFile("archive.zip", "r") as z:\n    z.extractall("extracted")  |
+	|  tarfile  Module       | Read/write TAR files                        |  python\nimport tarfile\nwith tarfile.open("archive.tar.gz", "r:gz") as tar:\n    tar.extractall("extracted")  |
+	|  gzip  Module          | Read/write GZIP files                       |  python\nimport gzip\nwith gzip.open("file.gz", "rb") as f:\n    content = f.read()  |
+	|  bz2  Module           | Read/write BZ2 compressed files            |  python\nimport bz2\nwith bz2.open("file.bz2", "rb") as f:\n    content = f.read()  |
+	|  lzma  Module          | Read/write LZMA compressed files           |  python\nimport lzma\nwith lzma.open("file.xz", "rb") as f:\n    content = f.read()  |
+	|  os.path  Module       | Path manipulation functions                |  python\nimport os.path\nprint(os.path.join("dir", "file.txt"))  |
+	|  fnmatch  Module       | Filename matching using wildcards          |  python\nimport fnmatch\nprint(fnmatch.fnmatch("file.txt", "*.txt"))  |
+	|  glob  Module          | Find files matching a pattern              |  python\nimport glob\nprint(glob.glob("*.txt"))  |
+	|  shutil  Module        | High-level file operations like copy, move |  python\nimport shutil\nshutil.copy("file.txt", "copy.txt")  |
+
+
+
 
 Collections Module:
 ``````````````````````
