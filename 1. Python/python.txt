@@ -361,12 +361,15 @@ Python:
 	4. Exception Handling Statement
 			- Used to handle errors or unexpected conditions gracefully without crashing the program
 
-		|  Name     |  Definition                              |  Syntax             |  Example                                        |
-		| --------- | ---------------------------------------- | ------------------- | ----------------------------------------------- |
-		|  try      | Block where an error might occur         |  try:               |  try:\n    x = 1 / 0                            |
-		|  except   | Block to handle the error                |  except ErrorType:  |  except ZeroDivisionError:\n    print("Error")  |
-		|  else     | Runs if  try  succeeds without exception |  else:              |  else:\n    print("No errors")                  |
-		|  finally  | Runs no matter what, error or no error   |  finally:           |  finally:\n    print("Cleanup")                 |
+	|   Concept                  |   Explanation                               |   Use Case                        |   Example                                                                                                                                     |
+	| -------------------------- | ------------------------------------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+	|   try-except               | Catch and handle errors gracefully          | Prevent crash when input is wrong | `python\ntry:\n    x = int(input("Enter a number: "))\nexcept ValueError:\n    print("Invalid input")`                                        |
+	|   Multiple except blocks   | Catch specific error types                  | Handle errors differently         | `python\ntry:\n    x = 10 / 0\nexcept ZeroDivisionError:\n    print("Cannot divide by zero")\nexcept ValueError:\n    print("Invalid value")` |
+	|   else block               | Runs only if no exception occurred          | Perform actions when no errors    | `python\ntry:\n    x = int(input())\nexcept ValueError:\n    print("Invalid")\nelse:\n    print("Success", x)`                                |
+	|   finally block            | Always runs, error or not                   | Clean up (e.g., close files)      | `python\ntry:\n    f = open("file.txt")\nexcept FileNotFoundError:\n    print("Not found")\nfinally:\n    print("Done")`                      |
+	|   raise                    | Manually throw an error                     | Validate data, custom checks      | `python\ndef set_age(age):\n    if age < 0:\n        raise ValueError("Age can't be negative")`                                               |
+	|   Custom Exception         | Create specific errors using custom classes | Business logic validation         | `python\nclass MyError(Exception):\n    pass\n\nraise MyError("Something went wrong")`                                                        |
+
 
 	5. Match Statement
 			- Pattern matching allows matching values and executing corresponding code blocks, similar to switch in other languages.
