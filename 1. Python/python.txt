@@ -410,87 +410,42 @@ Python:
 	- Functions are reusable blocks of code that perform a specific task.
 	- They help organize code, avoid repetition, and make it easier to read and maintain.	
 	- Functions can take inputs (parameters) and return outputs (return values).
+	- Python supports both built-in functions and user-defined functions.
+	
 
-	Concept	Explanation	Example
-	Function Definition	Define a function using def keyword	def greet():
-		print('Hello')
-	Function Call	Execute a function	greet()
-	Parameters	Variables in function definition	def greet(name):
-		print('Hello', name)
-	Arguments	Values passed to a function	greet('Shiffana')
-	Return Statement	Return a value to the caller	def add(a, b):
-		return a + b
-	Default Parameters	Parameter with default value	def greet(name='Guest'):
-		print('Hello', name)
-	Keyword Arguments	Pass values using parameter names	def student(name, age):
-		print(name, age)
-	student(age=20, name='Ali')
-	*args	Accept multiple positional arguments	def show(*args):
-		for i in args:
-			print(i)
-	**kwargs	Accept multiple keyword arguments	def show(**kwargs):
-		for k, v in kwargs.items():
-			print(k, v)
-	Lambda Function	Anonymous one-line function	square = lambda x: x**2
-	print(square(4))
-	Scope	Local vs Global variables	x = 10
-	def test():
-		x = 5
-		print(x)
-	test()
-	print(x)
-	Docstring	Function description string	def greet():
-		"""This says hello."""
-		print('Hi')
-	print(greet.__doc__)
-	Recursion	A function calling itself	def fact(n):
-		if n==0: return 1
-		return n * fact(n-1)
-	Function Annotations	Used for type hinting	def add(a: int, b: int) -> int:
-		return a + b
-	Nested Functions	Function defined inside another	def outer():
-		def inner():
-			print('Hi')
-		inner()
-	Closures	Function remembers its enclosing scope	def outer():
-		msg = 'Hi'
-		def inner():
-			print(msg)
-		return inner
-	Decorators	Modifies another function	def deco(func):
-		def wrap():
-			print('Before')
-			func()
-		return wrap
-	nonlocal	Modify outer variable from inner	def outer():
-		x = 'old'
-		def inner():
-			nonlocal x
-			x = 'new'
-		inner()
-		print(x)
-	Higher-order Functions	Takes/returns other functions	def apply(func, val):
-		return func(val)
-	apply(lambda x: x*2, 5)
+	|   Concept                    |   Explanation                         |   Use Case                         |   Example                                                                                                                                           |
+	| ---------------------------- | ------------------------------------- | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+	|   Function Definition        | Use `def` to create a function        | Reusable code blocks               |  python\ndef greet():\n    print("Hello")                                                                                                           |
+	|   Function Call              | Executes function code                | Trigger functionality              |  python\ngreet()                                                                                                                                    |
+	|   Parameters                 | Input variables in definition         | Customize behavior                 |  python\ndef greet(name):\n    print("Hello", name)                                                                                                 |
+	|   Arguments                  | Actual values passed                  | Provide input                      |  python\ngreet("Shiffana")                                                                                                                          |
+	|   Return Statement           | Sends value to caller                 | Use result in code                 |  python\ndef add(a, b):\n    return a + b                                                                                                           |
+	|   Default Parameters         | Use default if no argument given      | Optional arguments                 |  python\ndef greet(name="Guest"):\n    print("Hello", name)                                                                                         |
+	|   Keyword Arguments          | Specify parameter names               | Avoid ordering issues              |  python\ndef student(name, age):\n    print(name, age)\n\nstudent(age=20, name="Ali")                                                               |
+	|   `*args` (Positional)       | Accept multiple positional args       | Accept unlimited inputs            |  python\ndef show(*args):\n    for i in args:\n        print(i)                                                                                     |
+	|   `**kwargs` (Keyword)       | Accept multiple keyword args          | Flexible named arguments           |  python\ndef show(**kwargs):\n    for k, v in kwargs.items():\n        print(k, v)                                                                  |
+	|   Lambda Function            | One-line anonymous function           | Inline short logic                 |  python\nsquare = lambda x: x ** 2\nprint(square(4))                                                                                                |
+	|   Higher-order Functions     | Takes or returns other functions      | Flexible function passing          |  python\ndef apply(func, val):\n    return func(val)\n\napply(lambda x: x * 2, 5)                                                                   |
+	|   Function Annotations       | Type hints for readability            | IDE help, static checks            |  python\ndef add(a: int, b: int) -> int:\n    return a + b                                                                                          |
+	|   Docstring                  | Function documentation string         | Explain purpose of function        |  python\ndef greet():\n    """This says hello."""\n    print("Hi")\n\nprint(greet.__doc__)                                                          |
+	|   Scope                      | Local vs global variables             | Prevent accidental overwrite       |  python\nx = 10\n\ndef test():\n    x = 5\n    print(x)\n\ntest()\nprint(x)                                                                         |
+	|   nonlocal                   | Modify outer function’s variable      | Update nested scope variable       |  python\ndef outer():\n    x = 'old'\n    def inner():\n        nonlocal x\n        x = 'new'\n    inner()\n    print(x)                            |
+	|   Nested Functions           | Define function inside another        | Limit scope of helper functions    |  python\ndef outer():\n    def inner():\n        print("Hi")\n    inner()                                                                           |
+	|   Closures                   | Inner function remembers outer values | Preserve state                     |  python\ndef outer():\n    msg = 'Hi'\n    def inner():\n        print(msg)\n    return inner                                                       |
+	|   Decorators                 | Modify behavior of another function   | Logging, auth, timing              |  python\ndef deco(func):\n    def wrap():\n        print("Before")\n        func()\n    return wrap                                                 |
+	|   Recursion                  | Function calling itself               | Factorial, Fibonacci, backtracking |  python\ndef fact(n):\n    if n == 0:\n        return 1\n    return n * fact(n - 1)                                                                 |
+	|    __name__ == '__main__'    | Run code only if not imported         | Script reuse and testing           |  python\ndef main():\n    print("Running directly")\n\nif __name__ == "__main__":\n    main()                                                       |
+	|    functools.partial         | Fix some arguments in advance         | Preconfigure function behavior     |  python\nfrom functools import partial\n\ndouble = partial(pow, 2)\nprint(double(3))                                                                |
+	|    functools.lru_cache       | Memoize results to speed up function  | Cache expensive calls              |  python\nfrom functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    if n < 2:\n        return n\n    return fib(n-1) + fib(n-2)  |
+	|   Function Introspection     | Access metadata like name/doc         | Debugging and reflection           |  python\ndef f():\n    """Sample"""\n    pass\n\nprint(f.__name__)\nprint(f.__doc__)                                                                |
+	|   Async Functions            | Support async programming             | Concurrent I/O, networking         |  python\nimport asyncio\n\nasync def greet():\n    await asyncio.sleep(1)\n    print("Hello")                                                       |
+	|   Generator Functions        | Yield values one at a time            | Handle large data streams          |  python\ndef count_up():\n    yield 1\n    yield 2\n    yield 3                                                                                     |
+	|   Callable Objects           | Objects behaving like functions       | Advanced OOP use                   |  python\nclass Greeter:\n    def __call__(self):\n        print("Hello")\n\ng = Greeter()\ng()                                                      |
+	|   Function Overloading       | Same name, different signatures       | Not supported directly in Python   |  python\n# Use default args or variable args instead\n\ndef add(x, y=0):\n    return x + y\n\nprint(add(5))\nprint(add(5, 10))                        |
 
 
-	| **Topic**                   | **Explanation**                          | **Code Example**                                                                    |
-	| --------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------- |
-	| **Function Definition**     | Define a function using `def` keyword    | `def greet():\n    print("Hello")`                                                  |
-	| **Function Call**           | Execute a function                       | `greet()`                                                                           |
-	| **Parameters**              | Variables in function definition         | `def greet(name):\n    print("Hello", name)`                                        |
-	| **Arguments**               | Values passed to a function              | `greet("Shiffana")`                                                                 |
-	| **Return Statement**        | Return a value to caller                 | `def add(a, b):\n    return a + b`                                                  |
-	| **Default Parameters**      | Parameter with default value             | `def greet(name="Guest"):\n    print("Hello", name)`                                |
-	| **Keyword Arguments**       | Pass values using parameter names        | `def student(name, age):\n    print(name, age)\n\nstudent(age=20, name="Ali")`      |
-	| **`*args` (Positional)**    | Accept multiple positional args          | `def show(*args):\n    for i in args:\n        print(i)`                            |
-	| **`**kwargs` (Keyword)**    | Accept multiple keyword args             | `def show(**kwargs):\n    for k, v in kwargs.items():\n        print(k, v)`         |
-	| **Lambda Function**         | Anonymous one-line function              | `square = lambda x: x**2\nprint(square(4))`                                         |
-	| **Scope (Local vs Global)** | Local variables are inside function only | `x = 10\n\ndef test():\n    x = 5\n    print(x)\n\ntest()\nprint(x)`                |
-	| **Docstring**               | Function description string              | `def greet():\n    """This says hello."""\n    print("Hi")\n\nprint(greet.__doc__)` |
-
-Object Oriented Programming:
-```````````````````````````
+9. Object Oriented Programming:
+```````````````````````````````
   -  OOP (Object-Oriented Programming) is a programming paradigm that emphasizes the use of objects and 
 		classes to represent and manipulate data. 
   -  In Python, you can use OOP concepts to design and create classes, objects, and methods that encapsulate 
@@ -530,37 +485,37 @@ OOP can be a powerful tool for solving complex programming problems and building
 
 Collections Module:
 ``````````````````````
-	- The `collections` module provides specialized container datatypes that extend the built-in types like `list`, `dict`, and `set`.
+	- The  collections  module provides specialized container datatypes that extend the built-in types like  list ,  dict , and  set .
 	- These data structures are optimized for specific use cases, making them more efficient and easier to use in certain scenarios.
-	```python
+	   python
 	from collections import Counter, defaultdict, deque, namedtuple, OrderedDict, ChainMap, UserDict
 
 	| Collection Type | Import & Example Code                                                            | Purpose / Description                                                                                   | Example Output                               |
 	| --------------- | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
-	| `Counter`       | `from collections import Counter`<br>`Counter("apple")`                          | 🧮 Counts how many times each item appears in a collection                                              | `{'p': 2, 'a': 1, 'l': 1, 'e': 1}`           |
-	| `defaultdict`   | `from collections import defaultdict`<br>`d = defaultdict(int)`<br>`d['a'] += 1` | 🔧 Like a normal `dict`, but returns a **default value** when accessing missing keys                    | `{'a': 1, 'b': 0}`                           |
-	| `deque`         | `from collections import deque`<br>`dq = deque([1, 2])`<br>`dq.appendleft(0)`    | ↔️ Double-ended queue – fast adding/removing from **both ends**                                         | `deque([0, 1, 2])`                           |
-	| `namedtuple`    | `from collections import namedtuple`<br>`Point = namedtuple("Point", "x y")`     | 🏷 A tuple with **named fields** – acts like a lightweight class                                        | `p = Point(1, 2)` → access like `p.x`, `p.y` |
-	| `OrderedDict`   | `from collections import OrderedDict`<br>`od = OrderedDict()`                    | 📋 Dictionary that remembers the **insertion order** (Note: normal `dict` does this in Python 3.7+)     | `{'a': 1, 'b': 2}`                           |
-	| `ChainMap`      | `from collections import ChainMap`<br>`cm = ChainMap(dict1, dict2)`              | 🔗 Combines multiple dicts into a single view – reads from first, falls back to second if key not found | `{'a': 1, 'b': 2}` (combined from 2 dicts)   |
-	| `UserDict`      | `from collections import UserDict`<br>`class MyDict(UserDict): pass`            | 📖 Custom dictionary class that extends `dict` functionality                                          | `MyDict({'a': 1})`                            |
+	|  Counter        |  from collections import Counter <br> Counter("apple")                           | 🧮 Counts how many times each item appears in a collection                                              |  {'p': 2, 'a': 1, 'l': 1, 'e': 1}            |
+	|  defaultdict    |  from collections import defaultdict <br> d = defaultdict(int) <br> d['a'] += 1  | 🔧 Like a normal  dict , but returns a   default value   when accessing missing keys                    |  {'a': 1, 'b': 0}                            |
+	|  deque          |  from collections import deque <br> dq = deque([1, 2]) <br> dq.appendleft(0)     | ↔️ Double-ended queue – fast adding/removing from   both ends                                           |  deque([0, 1, 2])                            |
+	|  namedtuple     |  from collections import namedtuple <br> Point = namedtuple("Point", "x y")      | 🏷 A tuple with   named fields   – acts like a lightweight class                                        |  p = Point(1, 2)  → access like  p.x ,  p.y  |
+	|  OrderedDict    |  from collections import OrderedDict <br> od = OrderedDict()                     | 📋 Dictionary that remembers the   insertion order   (Note: normal  dict  does this in Python 3.7+)     |  {'a': 1, 'b': 2}                            |
+	|  ChainMap       |  from collections import ChainMap <br> cm = ChainMap(dict1, dict2)               | 🔗 Combines multiple dicts into a single view – reads from first, falls back to second if key not found |  {'a': 1, 'b': 2}  (combined from 2 dicts)   |
+	|  UserDict       |  from collections import UserDict <br> class MyDict(UserDict): pass             | 📖 Custom dictionary class that extends  dict  functionality                                          |  MyDict({'a': 1})                             |
 
 	Counter: 
 	| Task / Feature                   | Example Code                      | Output / Description                                                 |                                                                                    |
 	| -------------------------------- | --------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-	| **1. Count elements**            | `Counter("banana")`               | `Counter({'a': 3, 'n': 2, 'b': 1})` – counts each character          |                                                                                    |
-	| **2. Get count of a value**      | `c['a']`                          | `3` – returns how many times `'a'` appears                           |                                                                                    |
-	| **3. Safe access (missing key)** | `c['z']`                          | `0` – returns `0` if the item does not exist (no error)              |                                                                                    |
-	| **4. List all items**            | `c.items()`                       | `dict_items([('b', 1), ('a', 3), ('n', 2)])`                         |                                                                                    |
-	| **5. List all keys only**        | `c.keys()`                        | `dict_keys(['b', 'a', 'n'])`                                         |                                                                                    |
-	| **6. List all counts only**      | `c.values()`                      | `dict_values([1, 3, 2])`                                             |                                                                                    |
-	| **7. Most common N items**       | `c.most_common(2)`                | `[('a', 3), ('n', 2)]` – top 2 most frequent items                   |                                                                                    |
-	| **8. All elements expanded**     | `list(c.elements())`              | `['b', 'a', 'a', 'a', 'n', 'n']` – repeats each item by its count    |                                                                                    |
-	| **9. Add two Counters**          | `Counter("abc") + Counter("bcd")` | `Counter({'b': 2, 'c': 2, 'a': 1, 'd': 1})`                          |                                                                                    |
-	| **10. Subtract Counters**        | `Counter("abc") - Counter("bcd")` | `Counter({'a': 1})` – subtracts counts, removes negatives            |                                                                                    |
-	| **11. Minimum (Intersection)**   | `Counter("abc") & Counter("bcd")` | `Counter({'b': 1, 'c': 1})` – keeps the lower count for common items |                                                                                    |
-	| **12. Maximum (Union)**          | \`Counter("abc")                  | Counter("bcd")\`                                                     | `Counter({'b': 1, 'c': 1, 'a': 1, 'd': 1})` – keeps the higher count for each item |
-	| **13. Update with more data**    | `c.update("ana")`                 | Adds counts from "ana" to the existing Counter                       |                                                                                    |
-	| **14. Delete an item**           | `del c['a']`                      | Removes the item `'a'` entirely from the Counter                     |                                                                                    |
-	| **15. Clear all counts**         | `c.clear()`                       | Empties the Counter, making it empty                                 |                                                                                    |
-	| **16. Convert to dict**          | `dict(c)`                         | Converts Counter to a regular dictionary                             |                                                                                    |
+	|   1. Count elements              |  Counter("banana")                |  Counter({'a': 3, 'n': 2, 'b': 1})  – counts each character          |                                                                                    |
+	|   2. Get count of a value        |  c['a']                           |  3  – returns how many times  'a'  appears                           |                                                                                    |
+	|   3. Safe access (missing key)   |  c['z']                           |  0  – returns  0  if the item does not exist (no error)              |                                                                                    |
+	|   4. List all items              |  c.items()                        |  dict_items([('b', 1), ('a', 3), ('n', 2)])                          |                                                                                    |
+	|   5. List all keys only          |  c.keys()                         |  dict_keys(['b', 'a', 'n'])                                          |                                                                                    |
+	|   6. List all counts only        |  c.values()                       |  dict_values([1, 3, 2])                                              |                                                                                    |
+	|   7. Most common N items         |  c.most_common(2)                 |  [('a', 3), ('n', 2)]  – top 2 most frequent items                   |                                                                                    |
+	|   8. All elements expanded       |  list(c.elements())               |  ['b', 'a', 'a', 'a', 'n', 'n']  – repeats each item by its count    |                                                                                    |
+	|   9. Add two Counters            |  Counter("abc") + Counter("bcd")  |  Counter({'b': 2, 'c': 2, 'a': 1, 'd': 1})                           |                                                                                    |
+	|   10. Subtract Counters          |  Counter("abc") - Counter("bcd")  |  Counter({'a': 1})  – subtracts counts, removes negatives            |                                                                                    |
+	|   11. Minimum (Intersection)     |  Counter("abc") & Counter("bcd")  |  Counter({'b': 1, 'c': 1})  – keeps the lower count for common items |                                                                                    |
+	|   12. Maximum (Union)            | \ Counter("abc")                  | Counter("bcd")\                                                      |  Counter({'b': 1, 'c': 1, 'a': 1, 'd': 1})  – keeps the higher count for each item |
+	|   13. Update with more data      |  c.update("ana")                  | Adds counts from "ana" to the existing Counter                       |                                                                                    |
+	|   14. Delete an item             |  del c['a']                       | Removes the item  'a'  entirely from the Counter                     |                                                                                    |
+	|   15. Clear all counts           |  c.clear()                        | Empties the Counter, making it empty                                 |                                                                                    |
+	|   16. Convert to dict            |  dict(c)                          | Converts Counter to a regular dictionary                             |                                                                                    |
