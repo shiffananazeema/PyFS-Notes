@@ -30,3 +30,57 @@ fahrenheit to celsius    - (f - 32) * 5/9
 celsius to kelvin        - c + 273.15
 fahrenheit to kelvin     - (f - 32) * 5/9 + 273.15
 
+
+Time Complexity Cheat Sheet:
+
+    | Time Complexity | Name              | What It Means                           | Example Code                            |
+    | --------------- | ----------------- | --------------------------------------- | --------------------------------------- |
+    |   O(1)          | Constant Time     | Takes same time no matter the input     | print("Hello")                         |
+    |   O(log n)      | Logarithmic Time  | Cuts work in half each step             | Binary Search                           |
+    |   O(n)          | Linear Time       | Grows linearly with input               | for i in range(n):                     |
+    |   O(n log n)    | Linearithmic Time | Sorting algorithms like Merge Sort      | Merge Sort, Heap Sort                   |
+    |   O(n²)         | Quadratic Time    | Nested loops over the same input        | for i in range(n): for j in range(n):  |
+    |   O(√n)         | Square Root Time  | Useful in divisor, prime-check problems | for i in range(1, int(n**0.5) + 1):   |
+    |   O(2ⁿ)         | Exponential Time  | Doubles every time — grows very fast    | Recursive Fibonacci                     |
+    |   O(n!)         | Factorial Time    | All permutations — super slow           | Brute-force traveling salesman          |
+
+    Common Examples in Real Code  
+
+     🔹   Print numbers from 1 to n  
+
+    for i in range(n):       # O(n)
+        print(i)
+       
+
+     🔹   Check if a number is prime  
+
+    for i in range(2, int(n**0.5) + 1):  # O(√n)
+        if n % i == 0:
+            print("Not Prime")
+
+
+     🔹   Binary Search in a sorted array  
+
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            break
+       
+    ⏱ Time Complexity:   O(log n)  
+
+
+     🔹   Two nested loops  
+
+    for i in range(n):         # Outer loop: n
+        for j in range(n):     # Inner loop: n
+            print(i, j)
+       
+    ⏱ Time Complexity:   O(n²)  
+
+
+    | Goal                        | Try this instead of…                   |
+    | --------------------------- | -------------------------------------- |
+    | Find prime                  | Use  sqrt(n)  instead of  range(1, n)  |
+    | Searching sorted list       | Use binary search →  O(log n)          |
+    | Sorting before searching    | Sort once, then use fast search        |
+    | Avoid unnecessary recursion | Use loops or memoization               |

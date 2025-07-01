@@ -446,41 +446,91 @@ Python:
 
 9. Object Oriented Programming:
 ```````````````````````````````
-  -  OOP (Object-Oriented Programming) is a programming paradigm that emphasizes the use of objects and 
-		classes to represent and manipulate data. 
-  -  In Python, you can use OOP concepts to design and create classes, objects, and methods that encapsulate 
-		data and behavior into a single unit. 
-		
-Here are some of the key OOP concepts in Python:
+	-  OOP (Object-Oriented Programming) is a programming paradigm that emphasizes the use of objects and 
+			classes to represent and manipulate data. 
+	-  In Python, you can use OOP concepts to design and create classes, objects, and methods that encapsulate 
+			data and behavior into a single unit. 
+			
+	Here are some of the key OOP concepts in Python:
 
-Class:
-`````` 
-  -  A class is a blueprint or a template for creating objects. It defines the attributes (data) and 
-  		methods (functions) that the objects of that class will have.
+	Class:
+	`````` 
+	-  A class is a blueprint or a template for creating objects. It defines the attributes (data) and 
+			methods (functions) that the objects of that class will have.
 
-Object:
-```````` 
-  -  An object is an instance of a class. It is created from a class and has its own unique data and behavior. 
-	 	Objects can be created, modified, and deleted dynamically during program execution.
+	Object:
+	```````` 
+	-  An object is an instance of a class. It is created from a class and has its own unique data and behavior. 
+			Objects can be created, modified, and deleted dynamically during program execution.
 
-Encapsulation: 
-``````````````
-  -	Encapsulation is the process of hiding the implementation details of a class from the outside world and 
-		exposing only the necessary interface for interacting with the class. This helps to improve code
-		modularity and reduce code complexity.
+	| Concept    | Explanation                      | Use Case                                             | Example                           |
+	| ---------- | -------------------------------- | ---------------------------------------------------- | --------------------------------- |
+	|   Class    | A blueprint for creating objects | Model real-world entities like users, cars, products |  python\nclass Person:\n    pass  |
+	|   Object   | An instance of a class           | Create usable data from the blueprint                |  python\np1 = Person()            |
 
-Inheritance: 
-````````````
-  -  Inheritance is the ability of a class to inherit the attributes and methods of another class. 
-  -  It allows you to reuse existing code and create new classes that extend the functionality of existing classes.
+	Encapsulation: 
+	``````````````
+	-	Encapsulation is the process of hiding the implementation details of a class from the outside world and 
+			exposing only the necessary interface for interacting with the class. This helps to improve code
+			modularity and reduce code complexity.
 
-Polymorphism: 
-`````````````
-  -  Polymorphism is the ability of different objects to respond to the same message (method call) in different ways. 
-  -  It allows you to write code that can work with different types of objects without knowing their specific types at compile-time.
+	| Concept           | Explanation           | Use Case                                | Example                                                                                                                                                                                           |
+	| ----------------- | --------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+	|   Encapsulation   | Hide internal details | Protect data from external modification |  python\nclass Bank:\n    def __init__(self):\n        self.__balance = 0\n    def deposit(self, amt):\n        self.__balance += amt\n    def get_balance(self):\n        return self.__balance  |
 
-In Python, you can use these OOP concepts to create reusable, modular, and maintainable code that is easier to understand and debug. 
-OOP can be a powerful tool for solving complex programming problems and building robust software systems.
+	Inheritance: 
+	````````````
+	-  Inheritance is the ability of a class to inherit the attributes and methods of another class. 
+	-  It allows you to reuse existing code and create new classes that extend the functionality of existing classes.
+
+	| Concept         | Explanation                                      | Use Case                                | Example                                                                                                                                                                     |
+	| --------------- | ------------------------------------------------ | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+	|   Inheritance   | One class (child) inherits from another (parent) | Reuse code and create class hierarchies |  python\nclass Animal:\n    def speak(self):\n        print(\"Makes sound\")\n\nclass Dog(Animal):\n    def speak(self):\n        print(\"Barks\")\n\nd = Dog()\nd.speak()  |
+
+	Polymorphism: 
+	`````````````
+	-  Polymorphism is the ability of different objects to respond to the same message (method call) in different ways. 
+	-  It allows you to write code that can work with different types of objects without knowing their specific types at compile-time.
+
+	| Concept          | Explanation                                                | Use Case                         | Example                                                                                                                                                                                                                 |
+	| ---------------- | ---------------------------------------------------------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+	|   Polymorphism   | Same method name behaves differently for different classes | Write flexible and reusable code |  python\nclass Cat:\n    def sound(self):\n        print(\"Meow\")\n\nclass Dog:\n    def sound(self):\n        print(\"Bark\")\n\ndef make_sound(animal):\n    animal.sound()\n\nmake_sound(Cat())\nmake_sound(Dog())  |
+	
+	Abstraction:
+	````````````` 
+	-  Abstraction is the process of simplifying complex systems by breaking them down into smaller, more manageable parts. 
+	-  It allows you to focus on the essential features of an object while ignoring the irrelevant details.
+	
+	| Concept         | Explanation                                               | Use Case                                    | Example                                                                                                                                                                                                                                                                |
+	| --------------- | --------------------------------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+	|   Abstraction   | Hiding implementation details using abstract base classes | Enforce structure and method implementation |  python\nfrom abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def area(self):\n        pass\n\nclass Square(Shape):\n    def __init__(self, side):\n        self.side = side\n    def area(self):\n        return self.side * self.side  |
+
+	Other OOP Concepts:
+	````````````````````
+	-  Python also supports other OOP concepts like method overloading, operator overloading, and multiple inheritance.
+	-  These concepts allow you to customize the behavior of classes and objects in Python.
+	
+	| Concept         			| Explanation                               | Use Case             						| Example                                                                                                                  |
+	| ------------------------- | ----------------------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+	| __init__() Constructor 	| Automatically runs when object is created | Set up initial state 						|  python\nclass Person:\n    def __init__(self, name):\n        self.name = name\n\np1 = Person(\"Ali\")\nprint(p1.name)  |
+	|   Instance Variable   	| Unique for each object 					| Store individual object data 				|  python\nclass Dog:\n    def __init__(self, name):\n        self.name = name  |
+	|   Class Variable     		| Shared by all objects  					| Common property like species 				|  python\nclass Dog:\n    species = 'Canine'                                   |
+	|   Instance Method  		| Takes `self` as first argument 			| Access or modify object state            	|  python\ndef bark(self):\n    print(self.name, 'barks')                                   |
+	|   Class Method      		| Takes `cls` as first argument  			| Factory methods, change class-level data 	|  python\n@classmethod\ndef set_species(cls, new_species):\n    cls.species = new_species  |
+	|   Static Method     		| No `self` or `cls`             			| Utility functions related to class       	|  python\n@staticmethod\ndef info():\n    print('Dogs are animals')                        |
+	|    super()    			| Call a method from the parent class 		| Reuse parent behavior while extending it 	|  python\nclass Animal:\n    def __init__(self):\n        print(\"Animal created\")\n\nclass Dog(Animal):\n    def __init__(self):\n        super().__init__()\n        print(\"Dog created\")\n\nDog()  |
+	|   `__str__` and `__repr__`| Control how objects are printed     		| Improve debugging and display            	|  python\nclass Book:\n    def __init__(self, title):\n        self.title = title\n    def __str__(self):\n        return f\"Book: {self.title}\"\n\nb = Book(\"Python\")\nprint(b)  |
+	|   Other common ones       | `__add__`, `__eq__`, `__len__` etc. 		| Customize behavior of built-in operators 	|  python\nclass Point:\n    def __init__(self, x):\n        self.x = x\n    def __add__(self, other):\n        return Point(self.x + other.x)                                        |
+	|   Protected (`_var`)      | Meant for internal use (not enforced) 	| Convention only          					|  python\nclass Person:\n    def __init__(self):\n        self._age = 30        |
+	|   Private (`__var`)       | Name mangled to prevent access        	| Restrict external access 					|  python\nclass Person:\n    def __init__(self):\n        self.__salary = 5000  |
+	|    @property    			| Makes method read-only attribute 			| Hide complex logic behind simple access 	|  python\nclass Circle:\n    def __init__(self, radius):\n        self._radius = radius\n\n    @property\n    def area(self):\n        return 3.14 * self._radius ** 2\n\nc = Circle(5)\nprint(c.area)  # no () needed  |
+	|   Composition   			| Use one class inside another 				| Better for "has-a" relationship 			|  python\nclass Engine:\n    def start(self):\n        print(\"Engine started\")\n\nclass Car:\n    def __init__(self):\n        self.engine = Engine()\n\nc = Car()\nc.engine.start()  |
+	|   Inheritance   			| Derive from another class    				| Better for "is-a" relationship  			|  python\nclass Vehicle:\n    pass\nclass Bike(Vehicle):\n    pass                                                                                                                      |
+	|   Duck Typing   			| quack like duck base on behavior not type | Flexible code without enforcing types 	|  python\nclass Duck:\n    def quack(self):\n        print(\"Quack\")\n\nclass Person:\n    def quack(self):\n        print(\"I'm quacking like a duck!\")\n\ndef make_it_quack(entity):\n    entity.quack()\n\nmake_it_quack(Duck())\nmake_it_quack(Person())  |
+	|   Multiple Inheritance   	| Class inherits from multiple parents 		| Combine behavior from multiple classes 	|  python\nclass Father:\n    def work(self):\n        print(\"Engineer\")\n\nclass Mother:\n    def cook(self):\n        print(\"Chef\")\n\nclass Child(Father, Mother):\n    pass\n\nc = Child()\nc.work()\nc.cook()  |
+
+	- In Python, you can use these OOP concepts to create reusable, modular, and maintainable code that is easier to understand and debug. 
+	- OOP can be a powerful tool for solving complex programming problems and building robust software systems.
     
 
 Collections Module:
