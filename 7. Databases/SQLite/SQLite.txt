@@ -5,6 +5,16 @@ SQLite
     - SQLite databases are stored in a single file, making them easy to manage and distribute.
     - It supports most of the SQL standard, including transactions, subqueries, and complex queries.
 
+DBeaver:
+`````````
+    - DBeaver is a free, open-source database management tool that supports SQLite and many other databases.
+    - It provides a user-friendly interface for managing databases, executing SQL queries, and visualizing data.
+    - You can download it from https://dbeaver.io/.
+    
+    - After installing DBeaver, you can create a new SQLite connection by selecting "SQLite" as the database type and providing the path to your SQLite database file.
+    - DBeaver allows you to execute SQL commands, view and edit data, and manage database schema through its graphical interface.
+
+
 DB browser for SQLite:
 ``````````````````````
  - A graphical tool to create, design, and edit SQLite database files.
@@ -14,8 +24,6 @@ DB browser for SQLite:
 
  - After installing DB Browser for SQLite, you can open an existing SQLite database or create a new one.
  - You can execute SQL commands directly in the interface, making it easy to test queries and manage your database.
-
-
 
 SQLite Commands
 ```````````````````
