@@ -1,2 +1,173 @@
- - SQL database engine - Richard Hipp in 2000 at United States
- - 
+SQLite
+```````
+ - SQLite is a lightweight, serverless, self-contained SQL database engine.
+ - It is widely used in mobile applications, embedded systems, and small to medium-sized applications.
+    - SQLite databases are stored in a single file, making them easy to manage and distribute.
+    - It supports most of the SQL standard, including transactions, subqueries, and complex queries.
+
+DB browser for SQLite:
+``````````````````````
+ - A graphical tool to create, design, and edit SQLite database files.
+ - It allows you to execute SQL queries, view and edit data, and manage database schema.
+ - Useful for visualizing the structure of your SQLite databases.
+    - You can download it from https://sqlitebrowser.org/.
+
+ - After installing DB Browser for SQLite, you can open an existing SQLite database or create a new one.
+ - You can execute SQL commands directly in the interface, making it easy to test queries and manage your database.
+
+
+
+SQLite Commands
+```````````````````
+    - SQLite commands are similar to standard SQL commands, with some SQLite-specific features.
+    - Common commands include:
+        - `CREATE TABLE`: Create a new table in the database.
+        - `INSERT INTO`: Insert new records into a table.
+        - `SELECT`: Retrieve data from one or more tables.
+        - `UPDATE`: Modify existing records in a table.
+        - `DELETE`: Remove records from a table.
+        - `DROP TABLE`: Delete a table and its data from the database.
+        - `ALTER TABLE`: Modify the structure of an existing table.
+        - `PRAGMA`: Get or set SQLite-specific options.
+        - `VACUUM`: Rebuild the database file to reclaim unused space.
+        - `BEGIN`, `COMMIT`, `ROLLBACK`: Manage transactions.
+        - `EXPLAIN`: Analyze and explain the execution plan of a query.
+        - `ATTACH`: Attach another database file to the current database connection.
+        - `DETACH`: Detach a previously attached database file.
+        - `CREATE INDEX`: Create an index on one or more columns of a table to improve query performance.
+        - `DROP INDEX`: Remove an index from the database.
+
+SQLite Queries:
+````````````````
+Create Database and Table:
+    - create database my_database;
+    - create table users (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      );
+
+Insert Data:
+    - insert into users (name, email) values ('Alice', 'alice@example.com');
+
+Insert Multiple Rows:
+   -  users = [
+        ('Alice', 'alice@example.com'),
+        ('Bob', 'bob@example.com'),
+        ('Charlie', 'charlie@example.com')
+     ]
+     cursor.executemany('''INSERT INTO users (username, email) VALUES (?, ?)''', users)
+
+Select Data:
+    - select * from users;
+    - select name, email from users where id = 1;
+    - select count(*) from users;
+
+Update Data:
+    - update users set email = 'alice_new@example.com' where id = 1;
+
+Delete Data:
+    - delete from users where id = 1;
+
+Drop Table:
+    - drop table users;
+
+Where Clause:
+    - select * from users where name like 'A%';  -- Find users whose names start with 'A'
+    - select * from users where created_at > '2023-01-01';  -- Find users created after a specific date
+    - select * from users where email is not null;  -- Find users with a non-null email address
+
+Sorting and Ordering:
+    - select * from users order by created_at desc;  -- Sort users by creation date in descending order
+    - select * from users order by name asc;  -- Sort users by name in ascending order
+
+Filtering and Aggregation:
+    - select count(*) from users where email like '%@example.com';  -- Count users with a specific email domain
+    - select name, count(*) from users group by name;  -- Group users by name and count occurrences
+    - select email, count(*) from users group by email having count(*) > 1;  -- Find duplicate emails
+    - select name, max(created_at) from users group by name;  -- Find the latest creation date for each user
+
+Joining Tables:
+    - If you have another table, e.g., `orders`, you can join it with `users`:
+      ```sql
+      select users.name, orders.order_id from users
+      join orders on users.id = orders.user_id;
+      ```
+
+Grouping:
+    - select name, count(*) from users group by name;  -- Group users by name and count occurrences
+
+Changing Data Types:
+    - SQLite allows you to change the data type of a column using the `ALTER TABLE` command, but it may require creating a new table and copying data.
+    - Example: To change the `email` column from `TEXT` to `VARCHAR(255)`, you would typically create a new table with the desired schema, copy the data, and then rename the tables.
+
+
+
+SQLite Data Types
+``````````````````````
+    - SQLite supports several data types, including:
+        - `INTEGER`: A signed integer.
+        - `REAL`: A floating-point number.
+        - `TEXT`: A string of text.
+        - `BLOB`: A binary large object (used for storing binary data).
+        - `NULL`: Represents a missing or undefined value.
+    - SQLite uses dynamic typing, meaning you can store any type of data in any column, regardless of its declared type.
+
+SQLite Functions
+``````````````````````
+    - SQLite provides a variety of built-in functions for data manipulation and analysis, including:
+        - `COUNT()`: Count the number of rows in a result set.
+        - `SUM()`: Calculate the sum of a numeric column.
+        - `AVG()`: Calculate the average value of a numeric column.
+        - `MIN()`: Find the minimum value in a column.
+        - `MAX()`: Find the maximum value in a column.
+        - `LENGTH()`: Get the length of a string.
+        - `UPPER()`, `LOWER()`: Convert strings to uppercase or lowercase.
+        - `SUBSTR()`: Extract a substring from a string.
+        - `ROUND()`: Round a numeric value to a specified number of decimal places.
+
+SQLite Indexes
+``````````````````````
+    - Indexes are used to improve the performance of queries by allowing faster data retrieval.
+    - You can create indexes on one or more columns of a table using the `CREATE INDEX` command.
+    - Indexes can significantly speed up `SELECT` queries, especially on large tables.
+    - However, they can slow down `INSERT`, `UPDATE`, and `DELETE` operations because the index must be updated whenever the data changes.
+
+SQLite Transactions
+``````````````````````
+    - Transactions in SQLite allow you to group multiple SQL commands into a single unit of work.
+    - You can use `BEGIN` to start a transaction, `COMMIT` to save changes, and `ROLLBACK` to undo changes if an error occurs.
+    - Transactions ensure data integrity and consistency, especially in multi-user environments.
+
+SQLite Backup and Restore
+``````````````````````
+    - You can create a backup of an SQLite database by copying the database file to a different location.
+    - To restore a backup, simply copy the backup file back to the original location.
+    - SQLite also provides the `VACUUM` command to optimize the database and reclaim unused space.
+
+SQLite Security
+``````````````````````
+    - SQLite databases can be encrypted using extensions like SQLCipher for added security.
+    - You can implement access control by managing file permissions on the database file.
+    - Always validate and sanitize user input to prevent SQL injection attacks.
+
+SQLite Limitations
+``````````````````````
+    - SQLite is not designed for high-concurrency environments; it uses a file-locking mechanism that can lead to contention.
+    - It has limitations on database size (up to 140 terabytes) and the number of rows in a table (up to 2^64).
+    - It does not support stored procedures or user-defined functions like some other SQL databases.
+    - SQLite is best suited for applications with moderate data storage needs and low to medium concurrency requirements.
+
+SQLite Use Cases
+``````````````````````
+    - Mobile applications: SQLite is commonly used as the local database for mobile apps due to its lightweight nature.
+    - Embedded systems: SQLite is ideal for embedded systems and IoT devices where resources are limited.
+    - Desktop applications: Many desktop applications use SQLite for local data storage.
+    - Testing and prototyping: SQLite is often used in testing and prototyping due to its simplicity and ease of setup.
+
+SQLite Resources
+``````````````````````
+    - Official SQLite documentation: https://www.sqlite.org/docs.html
+    - SQLite tutorial: https://www.sqlitetutorial.net/
+    - SQLite command-line shell: https://www.sqlite.org/cli.html
