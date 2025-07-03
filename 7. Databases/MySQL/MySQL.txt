@@ -26,8 +26,7 @@ RDBMS:
 ``````
 RDBMS stands for Relational Database Management System.
 RDBMS is a program used to maintain a relational database.
-RDBMS is the basis for all modern database systems such as MySQL,
-Microsoft SQL Server, Oracle, and Microsoft Access.
+RDBMS is the basis for all modern database systems such as MySQL, Microsoft SQL Server, Oracle, and Microsoft Access.
 RDBMS uses SQL queries to access the data in the database.
 
 
@@ -68,17 +67,46 @@ DROP INDEX - deletes an index
 
 MySQL:
 
-To Start the MySQL on the system
-```````````````````````````````
+To Start the MySQL on the system - Linux
+`````````````````````````````````````
 sudo su - For the Root
 /opt/lampp/lampp start - To Start the Xampp localhost
 /opt/lampp/lampp stop - To Stop the Xampp localhost
+
+To Start the MySQL on the system - Windows
+`````````````````````````````````````
+1. Download and Install Xampp from https://www.apachefriends.org/index.html
+2. After installation, navigate to the Xampp installation directory (usually C:\xampp).
+3. Open the Xampp Control Panel.
+4. Start the MySQL Server by clicking the "Start" button next to MySQL in the Xampp Control Panel.
+5. Start the Apache Server by clicking the "Start" button next to Apache in the Xampp Control Panel for web access (https://localhost/phpmyadmin).
+
+Shell Commands to Start MySQL:
+````````````````````````````````
+mysql -u root
+# This command connects to MySQL as the root user.
+mysql -u root -p
+# Enter the password when prompted (if set).
+mysql -u root -p -h localhost
+# Enter the password when prompted (if set).
+
+
+Installation of MySQL connector:
+``````````````````````````````````````
+pip3 install mysql-connector-python
+
+
+[THESE COMMENDS USED IN Shell]
 
 CREATE DATABASE:
 ````````````````
 CREATE DATABASE databasename;
 
 eg: CREATE DATABASE Learning;
+
+CHECK DATABASES:
+````````````````
+SHOW DATABASES;
 
 USE DATABASE:
 `````````````
@@ -164,6 +192,16 @@ MODIFY COLUMN column_name datatype;
 eg:
 ALTER TABLE Customer
 MODIFY COLUMN DateOfBirth year;
+
+SHOW TABLES:
+```````````
+SHOW TABLES;
+
+DESCRIBE TABLE:
+`````````````
+desc table_name;
+eg:
+desc Employee;
 
 INSERT Statement:
 `````````````````
@@ -489,3 +527,26 @@ SELECT * FROM Employee WHERE Age < 25 ; Operators: `````````` AND OPERATOR: ^^^^
     THEN [Insert Statement]
     WHEN NOT MATCHED BY SOURCE
     THEN [Delete Statement];
+
+    eg:
+    MERGE INTO Employee AS T
+    USING New_Employee AS S
+    ON T.Id = S.Id
+    WHEN MATCHED
+    THEN UPDATE SET T.Name = S.Name, T.Department = S.Department
+    WHEN NOT MATCHED BY TARGET
+    THEN INSERT (Id, Name, Department) VALUES (S.Id, S.Name, S.Department)
+    WHEN NOT MATCHED BY SOURCE
+    THEN DELETE;
+
+    Transactions:
+    ```````````````
+    Transactions are used to ensure that a series of SQL statements are executed as a single unit of work. If any statement fails, the entire transaction can be rolled back to maintain data integrity.
+
+    START TRANSACTION;
+
+    -- SQL statements go here
+
+    COMMIT;
+
+    ROLLBACK;
