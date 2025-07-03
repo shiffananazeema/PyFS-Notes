@@ -25,6 +25,7 @@ DB browser for SQLite:
  - After installing DB Browser for SQLite, you can open an existing SQLite database or create a new one.
  - You can execute SQL commands directly in the interface, making it easy to test queries and manage your database.
 
+
 SQLite Commands
 ```````````````````
     - SQLite commands are similar to standard SQL commands, with some SQLite-specific features.
