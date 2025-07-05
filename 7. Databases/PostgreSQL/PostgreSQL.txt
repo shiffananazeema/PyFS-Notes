@@ -1,0 +1,115 @@
+PostgreSQL:
+```````````
+PostgreSQL (or Postgres) is a SQL-based database known for:
+    - Advanced features (constraints, triggers, indexes, stored procedures)
+    - ACID compliance (safe transactions)
+    - JSON support (hybrid relational/NoSQL)
+
+Installation:
+`````````````
+1. Download the PostgreSQL installer from the official website: https://www.postgresql.org/download/
+2. Follow the installation instructions for your operating system.
+3. During installation, you can choose to install additional components like pgAdmin, a graphical interface for managing PostgreSQL databases.
+4. After installation, you can start the PostgreSQL server using the command:
+
+user - postgres
+password - postgres
+port - 5432
+
+Connecting to PostgreSQL:
+`````````````````
+
+Using Terminal (psql):
+    - psql -U postgres
+    - Then enter your password when prompted.
+``````
+    - You can create a database and tables using SQL commands.
+        PS C:\WINDOWS\system32> psql -U postgres
+        Password for user postgres:
+
+        psql (16.3)
+        WARNING: Console code page (437) differs from Windows code page (1252)
+                8-bit characters might not work correctly. See psql reference
+                page "Notes for Windows users" for details.
+        Type "help" for help.
+
+        postgres=# create database learning;
+        CREATE DATABASE
+
+        postgres=# \c learning
+        You are now connected to database "learning" as user "postgres".
+
+        learning=# create table users(id serial primary key, name text not null, age int);
+        CREATE TABLE
+
+        learning=# insert into users(name,age) values('Shiffana', 25);
+        INSERT 0 1
+
+        learning=# select * from users;
+        id |   name   | age
+        ----+----------+-----
+        1 | Shiffana |  25
+        (1 row)
+
+        postgres=# \q
+
+``````````````
+
+Using Python (psycopg2):
+    - Install psycopg2: `pip install psycopg2`
+    - Example connection code:
+```python
+    import psycopg2
+
+    conn = psycopg2.connect(
+        dbname="learning",
+        user="postgres",
+        password="postgres",
+        host="localhost",
+        port="5432"
+    )
+
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM users")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+
+    cur.close()
+    conn.close()
+    ```
+``````````````````
+
+Using pgAdmin:
+`````````````````
+1. Open pgAdmin (installed with PostgreSQL).
+2. Connect to your PostgreSQL server (usually localhost).
+        3. Right-click on "Databases" and select "Create" → "Database".
+        4. Name your database (e.g., "learning") and click "Save".  
+
+To View Your learning Database in pgAdmin:
+1. Connect to the Correct Server
+Click the arrow (▶️) or double-click PostgreSQL 16 — the one you used in psql — and enter your password (usually postgres).
+
+2. Expand to Find Your Database
+After connecting:
+
+```
+Servers
+└── PostgreSQL 16
+    └── Databases
+        └── learning
+Click on learning to open it.
+
+3. View Your Table
+learning > Schemas > public > Tables
+
+You should see:
+users
+
+4. To View/Edit Data:
+Right-click the users table
+
+Select View/Edit Data → All Rows
+
+Now you’ll see the table data (id, name, age) in a spreadsheet-style view.
