@@ -1,5 +1,166 @@
-MongoDB is an open source NoSQL database.
-It is more advanced and capable of handling big data with dynamic schema features.
- - Create Cluster using username and password
- - Connect > MongoDB Compass > Copy the URL
- - Open MongoDB Compass App
+MongoDB
+```````
+ - MongoDB is a powerful, open-source NoSQL database that offers a document-oriented data model, providing a flexible alternative to traditional relational databases.
+ - Unlike SQL databases, MongoDB stores data in BSON format, which is similar to JSON, enabling efficient and scalable data storage and retrieval.
+ - It is designed to handle large volumes of unstructured data, making it suitable for applications with varying data structures.
+
+Installation:
+`````````````
+1. Download the MongoDB Community Server from the official website: https://www.mongodb.com/try/download/community
+2. Follow the installation instructions for your operating system.
+3. Start the MongoDB server using the command: `mongod`
+
+If needed add the path to system environment variables:
+``````
+C:\Program Files\MongoDB\Server\{version}\bin
+``````
+4. Use the MongoDB shell or a GUI tool like MongoDB Compass to interact with the database.
+
+Creating a Database and Collection:
+```````````````````
+1. install the `pymongo` library using pip:
+   ```
+   pip install pymongo
+   ```
+2. client = MongoClient("mongodb://localhost:27017/") - Connect to the MongoDB server.
+3. mydb = client['my_database'] - Create or access a database named 'my_database'.
+4. mycollection = mydb['myTable'] - Create or access a collection named 'myTable'.
+5. Insert a document into the collection:
+   ```python
+   record = {
+       "title": "MongoDB and Python",
+       "author": "John Doe",
+       "published_year": 2023
+   }
+   mycollection.insert_one(record)
+   ```
+6. Retrieve documents from the collection:
+   ```python
+   for doc in mycollection.find():
+       print(doc)
+   ```
+
+Mongodb Compass:
+`````````````
+MongoDB Compass is a graphical user interface (GUI) for MongoDB that allows users to visualize and interact with their data in a more intuitive way. It provides features such as schema visualization, query building, and performance monitoring.
+
+1. Open MongoDB Compass.
+2. Click New Connection.
+3. Enter the connection string: `mongodb://localhost:27017/`.
+4. Click Connect.
+5. Once connected, you can view existing databases and collections.
+6. To create a new database and collection, click on the "Create Database" button,
+   enter the database name and collection name, then click Create Database.
+
+
+Commands:
+```````````
+1. Use insert_one() for a single document.
+collection.insert_one(doc1)
+
+Parameter: doc1 represents a dictionary
+
+eg: 
+user = {"name": "Shiffana", "age": 25, "email": "shiff@example.com"}
+collection.insert_one(user)
+
+
+2. Use insert_many() for multiple document.
+collection.insert_many([doc1, doc2, doc3.....])
+
+Parameter: [doc1, doc2, doc3,....] represents a list of dictionary
+
+eg:
+user1 = {"name": "Shiffana", "age": 25, "email": "shiff@example.com"}
+user2 = {"name": "John", "age": 30, "email": "john@example.com"}
+user3 = {"name": "Jane", "age": 28, "email": "jane@example.com"}
+collection.insert_many([user1, user2, user3])
+
+
+3. Use find() to retrieve documents.
+collection.find()
+
+Parameter: No parameters needed, returns all documents in the collection.
+
+
+4. Use find_one() to retrieve a single document.
+collection.find_one({"name": "Shiffana"})
+
+Parameter: {"name": "Shiffana"} represents a query to find a specific document.
+
+
+5. Use update_one() to update a single document.
+collection.update_one({"name": "Shiffana"}, {"$set": {"age": 26}})
+
+Parameter: {"name": "Shiffana"} is the query to find the document, and
+{"$set": {"age": 26}} is the update operation to change the age.
+
+
+6. Use update_many() to update multiple documents.
+collection.update_many({"age": {"$gt": 25}}, {"$set": {"status": "adult"}})
+
+Parameter: {"age": {"$gt": 25}} is the query to find documents with
+age greater than 25, and {"$set": {"status": "adult"}} is the update operation to set the status.
+
+
+7. Use delete_one() to delete a single document.
+collection.delete_one({"name": "Shiffana"})
+
+Parameter: {"name": "Shiffana"} represents the query to find the document to delete.
+
+
+8. Use delete_many() to delete multiple documents.
+collection.delete_many({"age": {"$lt": 20}})
+
+Parameter: {"age": {"$lt": 20}} represents the query to find documents with age less than 20.
+
+
+9. Use drop() to drop a collection.
+collection.drop()
+
+Parameter: No parameters needed, drops the entire collection.
+
+
+10. Use drop_database() to drop a database.
+client.drop_database("my_database")
+
+Parameter: "my_database" is the name of the database to drop.
+
+
+More Commands:
+11. Use count_documents() to count the number of documents in a collection.
+eg:
+count = collection.count_documents({})
+
+12. Use distinct() to get distinct values for a field.
+eg:
+distinct_values = collection.distinct("field_name")
+
+13. Use aggregate() for advanced queries and data processing.
+eg:
+pipeline = [
+    {"$match": {"status": "active"}},
+    {"$group": {"_id": "$category", "total": {"$sum": 1}}}
+]
+result = collection.aggregate(pipeline)
+
+14. Use create_index() to create an index on a field for faster queries.
+eg: 
+collection.create_index([("field_name", pymongo.ASCENDING)])
+
+15. Use drop_index() to drop an index.
+eg:
+collection.drop_index("index_name")
+
+16. Use find_one_and_update() to find a document and update it in one operation.
+eg:
+result = collection.find_one_and_update(
+    {"name": "Shiffana"},
+    {"$set": {"age": 27}},
+    return_document=pymongo.ReturnDocument.AFTER
+)
+
+17. Use find_one_and_delete() to find a document and delete it in one operation.
+eg:
+result = collection.find_one_and_delete({"name": "Shiffana"})
+
