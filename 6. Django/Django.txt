@@ -1,32 +1,351 @@
-Virtual Environment
-- python -m venv env - To Create
-- .\env\Scripts\activate
+Django - A high-level Python web framework that encourages rapid development and clean, pragmatic design.
+       - With built-in features for authentication, database management, admin interface and CRUD operations.
 
-Django
-- django-admin startproject pname - To Create Project
-- python manage.py startapp aname - To Create App
-- python manage.py migrate - To Migrate Data
-- python manage.py runserver - To Run Server
+MVT (Model-View-Template)
+  Django uses the MVT architecture:
+       - Model: Defines the data structure.
+       - View: Handles the business logic and user requests.
+       - Template: Manages the presentation layer.
 
- - Back-End Server side web framework - Adrian and Simon in 2003 at Lawrence Journal-World
+Virtual Environment:
+  - Create a virtual environment to isolate project dependencies:
+    - `python -m venv env` - To Create
+    - `.\env\Scripts\activate` - To Activate
 
+Django Installation: 
+    1. Install Python and Pip.
+    2. Set up and activate a virtual environment.
+    3. Install Django using pip: - `pip install django`
 
- - Check the version of Djagno		- python -m django --version
- - Create a project			- django-admin startproject projectname
- - Create a app				- django-admin startapp appname
- - Run the project in server		- python manage.py runserver
- - Make Migrations for database		- python manage.py makemigrations appname
- - Complete the Migration		- python manage.py migrate appname 
- - Create the Super User		- python manage.py createsuperuser
- - Remove all the data 			- python manage.py flush
- - Create token				- python manage.py drf_create_token admin
+Django Project Setup:
+    1. Create a new Django project: - `django-admin startproject projectname`
+    2. Navigate into the project directory: - `cd projectname`
+    3. Start the development server: - `python manage.py runserver`
 
- Files inside the Django Project:
+ Explation of Key Files and Folders:
+    manage.py: Command-line utility for administrative tasks.
+    folder(projectname):
+    - __init__.py: Indicates that this directory should be treated as a Python package.
+    - settings.py: Contains all the settings and configuration for the project.
+    - urls.py: Maps URLs to views.
+    - wsgi.py: Entry point for WSGI-compatible web servers.
+    - asgi.py: Entry point for ASGI-compatible web servers.
 
- - manage.py		- command-line utility for administrative tasks
- - db.sqlite3		- database file stored in the SQLite 3 format
- - __init__.py		- tells python this directory consider as a Python Package
- - settings.py		- contains all the settings and configuration 
- - urls.py		- mapping between urls and views
- - asgi.py		- entry point for ASGI-compatible web server - Asynchronous Server Gateway interface
- - wsgi.py		- entry point for WSGI-compatible web server - Web Server Gateway Interface
+Django App Creation:
+    1. Create a new app within the project: - `python manage.py startapp appname`
+    2. Register the app in `settings.py` under `INSTALLED_APPS`.
+    3. Define models in `models.py` for database structure.
+    4. Create views in `views.py` to handle requests.
+    5. Map URLs to views in `urls.py` of the app.
+    6. Create templates in the `templates` directory for rendering HTML.
+    7. Run migrations to create database tables: - `python manage.py makemigrations` | `python manage.py migrate`
+    - python manage.py createsuperuser - To Create Super User
+    - python manage.py runserver - To Start the Development Server
+    - python manage.py makemigrations - To Create Migrations for Database Changes
+    - python manage.py migrate - To Apply Migrations to the Database
+
+  Explation of Key Files and Folders:
+    folder(appname):
+        - migrations/: Contains migration files for the app.
+        - admin.py: Register models for the Django admin interface.
+        - apps.py: Configuration for the app.
+        - forms.py: Define forms for user input.
+        - models.py: Define data models (database structure).
+        - static/: Directory for static files (CSS, JavaScript, images).   
+        - serializers.py: Define serializers for converting complex data types to JSON.
+        - tests.py: Write tests for the app.
+        - templates/: Directory for HTML templates.
+        - urls.py: Map URLs to views within the app.
+        - views.py: Handle business logic and user requests.
+
+Django Views:
+    - Function-based views: Define a function that takes a request and returns a response.
+    - Class-based views: Use classes to define views, allowing for more reusable and organized code.
+
+    Function-based View Example:
+        from django.http import HttpResponse
+        def my_view(request):
+            return HttpResponse("Hello, World!")
+
+    Class-based View Example:
+        from django.views import View
+        from django.http import HttpResponse
+        class MyView(View):
+            def get(self, request):
+                return HttpResponse("Hello, World!")
+
+Django URLs:
+    - URLconf: URL configuration is done in the `urls.py` file.
+    - Path: Use `path()` to define URL patterns.
+    - Include: Use `include()` to reference other URLconfs.
+
+    Example `urls.py`:
+    from django.urls import path
+    from .views import my_view, MyView
+    urlpatterns = [
+        path('function/', my_view, name='function_view'),
+        path('class/', MyView.as_view(), name='class_view'),
+    ]
+
+Django Templates:
+    - Use Django's template language to create dynamic HTML.
+    - Load static files using `{% load static %}`.
+    - Render templates in views using `render()`.
+
+    - Setup in `settings.py`
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [os.path.join(BASE_DIR, 'templates')],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]
+
+    Example Template:
+    ```html
+    {% load static %}
+    <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        </head>
+        <body>
+            <h1>Hello, {{ name }}!</h1>
+        </body>
+    </html>
+    ```
+
+Django Models:
+    - Define data models in `models.py`.
+    - Use Django's ORM to interact with the database.
+    - Create migrations for changes in models.
+
+    Example Model:
+    ```python
+    from django.db import models
+
+    class MyModel(models.Model):
+        name = models.CharField(max_length=100)
+        created_at = models.DateTimeField(auto_now_add=True)
+
+        def __str__(self):
+            return self.name
+    ```
+
+Django Admin Interface:
+    - Automatically generated admin interface for managing models.
+    - Register models in `admin.py` to make them accessible in the admin interface.
+
+    Example `admin.py`:
+    ```python
+    from django.contrib import admin
+    from .models import MyModel
+
+    admin.site.register(MyModel)
+    ```
+
+Django Static Files:
+    - Store static files (CSS, JavaScript, images) in the `static/` directory.
+    - Use `{% static 'path/to/file' %}` to reference static files in templates.
+
+    Example `settings.py` for static files:
+    ```python
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    ```
+
+Django QuerySets:
+    - Use QuerySets to retrieve and manipulate data from the database.
+    - Chain methods for filtering, ordering, and aggregating data.
+
+    Example QuerySet:
+    ```python
+    from .models import MyModel
+
+    # Retrieve all objects
+    all_objects = MyModel.objects.all()
+
+    # Filter objects
+    filtered_objects = MyModel.objects.filter(name='example')
+
+    # Order objects
+    ordered_objects = MyModel.objects.order_by('created_at')
+    ```
+
+Django Forms:
+    - Use Django's form system to handle user input.
+    - Create forms in `forms.py` and render them in templates.
+
+    Example Form:
+    ```python
+    from django import forms
+
+    class MyForm(forms.Form):
+        name = forms.CharField(label='Your Name', max_length=100)
+        email = forms.EmailField(label='Your Email')
+    ```
+
+Django REST API:
+    - Use Django REST Framework (DRF) to build RESTful APIs.
+    - Create serializers in `serializers.py` to convert complex data types to JSON.
+    - Define API views in `views.py` and map URLs in `urls.py`.
+
+    Example Serializer:
+    ```python
+    from rest_framework import serializers
+    from .models import MyModel
+
+    class MyModelSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = MyModel
+            fields = '__all__'
+    ```
+
+    Example API View:
+    ```python
+    from rest_framework import viewsets
+    from .models import MyModel
+    from .serializers import MyModelSerializer
+
+    class MyModelViewSet(viewsets.ModelViewSet):
+        queryset = MyModel.objects.all()
+        serializer_class = MyModelSerializer
+    ```
+
+Django Authentication:
+    - Use Django's built-in authentication system for user management.
+    - Create superusers with `python manage.py createsuperuser`.
+    - Use decorators like `@login_required` to protect views.
+
+    Example View with Authentication:
+    ```python
+    from django.contrib.auth.decorators import login_required
+    from django.shortcuts import render
+
+    @login_required
+    def my_protected_view(request):
+        return render(request, 'protected.html')
+    ```
+
+Django Miscellaneous:
+ Ajax in Django:
+    - Use Django's built-in support for AJAX requests.
+    - Handle AJAX requests in views and return JSON responses.
+
+    Example AJAX View:
+    ```python
+    from django.http import JsonResponse
+
+    def ajax_view(request):
+        data = {'message': 'Hello, AJAX!'}
+        return JsonResponse(data)
+    ```
+ Asynchronous Tasks:
+    - Use Celery for handling asynchronous tasks in Django.
+    - Set up a message broker like RabbitMQ or Redis.
+
+    Example Celery Task:
+    ```python
+    from celery import shared_task
+
+    @shared_task
+    def my_async_task():
+        # Perform some long-running task
+        return 'Task completed!'
+    ```
+ Session Management:
+    - Django provides built-in session management.
+    - Use sessions to store user-specific data across requests.
+
+    Example Session Usage:
+    ```python
+    def set_session(request):
+        request.session['key'] = 'value'
+        return HttpResponse("Session set!")
+
+    def get_session(request):
+        value = request.session.get('key', 'default_value')
+        return HttpResponse(f"Session value: {value}")
+    ```
+ 
+ State Management:
+    - Use Django's built-in state management features to handle user sessions and data persistence.
+    - Store user preferences or temporary data in the session.
+
+    Example State Management:
+    ```python
+    def set_user_preference(request):
+        request.session['theme'] = 'dark'
+        return HttpResponse("User preference set!")
+
+    def get_user_preference(request):
+        theme = request.session.get('theme', 'light')
+        return HttpResponse(f"Current theme: {theme}")
+    ```
+
+Django Testing:
+    - Use Django's testing framework to write unit tests for your application.
+    - Create test cases in `tests.py` and run them with `python manage.py test`.
+
+    Example Test Case:
+    ```python
+    from django.test import TestCase
+    from .models import MyModel
+
+    class MyModelTestCase(TestCase):
+        def setUp(self):
+            MyModel.objects.create(name='Test')
+
+        def test_my_model_creation(self):
+            obj = MyModel.objects.get(name='Test')
+            self.assertEqual(obj.name, 'Test')
+    ```
+
+Django Deployment:
+    - Use WSGI or ASGI for deploying Django applications.
+    - Configure settings for production, including database, static files, and security settings.
+    - Use a web server like Gunicorn or uWSGI in combination with Nginx or Apache.
+
+    Example WSGI Configuration:
+    ```python
+    import os
+    from django.core.wsgi import get_wsgi_application
+
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'projectname.settings')
+    application = get_wsgi_application()
+    ```
+
+Django Security:
+    - Use Django's built-in security features to protect against common vulnerabilities.
+    - Implement CSRF protection, XSS prevention, and secure password storage.
+    - Regularly update Django to the latest version for security patches.
+
+    Example CSRF Protection:
+    ```python
+    from django.views.decorators.csrf import csrf_protect
+
+    @csrf_protect
+    def my_csrf_protected_view(request):
+        return render(request, 'csrf_protected.html')
+    ```
+
+Django integration with Frontend Frameworks:
+    - Use Django as a backend API for frontend frameworks like React, Vue.js, or Angular.
+    - Serve static files and templates from Django while handling API requests separately.
+
+    Example API Endpoint for Frontend:
+    ```python
+    from django.http import JsonResponse
+
+    def api_data(request):
+        data = {'key': 'value'}
+        return JsonResponse(data)
+    ```
+
