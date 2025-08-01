@@ -1,0 +1,199 @@
+Setting up the Virtual Environment:
+  - Create a virtual environment to isolate project dependencies:
+    - `python -m venv ./venv` - To Create
+    - `.\venv\Scripts\activate` - To Activate
+
+Install Django:
+  - Install Django using pip:
+    - `pip install django`
+
+Starting the Project:
+  - Create a new Django project:
+    - `django-admin startproject Learning`
+  - Navigate into the project directory:
+    - `cd Learning`
+  - Run the development server:
+    - `python manage.py runserver` - Ctrl+C to stop the server
+      
+
+Creating an App:
+  - Create a new Django app within the project:
+    - `python manage.py startapp Learning_App`
+  - Register the app in `settings.py` under `INSTALLED_APPS`.
+        
+        INSTALLED_APPS = [
+            ...
+            'Learning_App',
+        ]
+
+Django Views:
+    - Create views in `Learning/views.py`:
+        ```python
+        from django.http import HttpResponse
+    
+        def home(request):
+            return HttpResponse("Hello, Django!")
+        ```
+
+Django URLs:
+  - Map URLs to views in `Learning/urls.py`:
+    ```python
+    from django.contrib import admin
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('', home, name='home'),
+    ]
+    ```
+ - Create a separate URL configuration for the app in `Learning_App/urls.py`:
+    Including other URLConf modules
+    Learning/urls.py:
+    ```python
+    from django.contrib import admin
+    from django.urls import path, include
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+        path('', include('Learning_App.urls'))
+    ]
+
+    Learning_App/urls.py:
+    ```python
+    from django.urls import path
+    from . import views
+    urlpatterns = [
+        path('', views.home, name='home'),
+    ]
+    ```
+
+Django Models:
+  - Define models in `Learning_App/models.py`:
+    ```python
+    from django.db import models
+
+    class Model(models.Model):
+        name = models.CharField(max_length=100)
+        description = models.TextField()
+    ```
+
+Django Migrations:
+  - Create migrations for the models:
+    - `python manage.py makemigrations`
+  - Apply migrations to the database:
+    - `python manage.py migrate`
+
+Django ORM:
+
+        python manage.py shell
+    - Use the Django shell to interact with the database:
+ Adding Objects:
+    
+    >>> from Learning_App.models import Model
+    >>> obj = Model(title="Test1", description="Added through shell")
+    >>> obj.save()
+
+    >>> Model.objects.all()
+ 
+ Modifying Objects:
+    - Retrieve and modify an object:
+    >>> obj = Model.objects.get(id=1)
+    >>> obj.title = "Updated Title"
+    >>> obj.save()
+
+ Deleting Objects:
+    - Delete an object:
+    >>> obj = Model.objects.get(id=1)
+    >>> obj.delete()
+
+Uploading Images in Django:
+  - Add media settings in `settings.py`:
+    ```python
+    MEDIA_ROOT = BASE_DIR / 'media'
+    MEDIA_URL = '/media/'
+    ```
+  - Update `urls.py` to serve media files during development:
+  Learning/urls.py:
+    ```python
+    from django.conf import settings
+    from django.conf.urls.static import static
+
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ```
+  - Learning_App/admin.py:
+    from django.contrib import admin
+    from .models import Model
+    admin.site.register(Model,)
+    
+  - Create Superuser:
+    - `python manage.py createsuperuser`
+  - Run the server and access the admin panel
+    - http://127.0.0.1:8000/admin
+
+  - Fill Details in the Model - title, description, and upload images.
+
+Connecting Django to different Database:
+  - Update `settings.py` to configure the database:
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.sqlite3',
+          'NAME': BASE_DIR / 'db.sqlite3',
+      }
+  }
+   change this to 
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': ‘<database_name>’,
+        'USER': '<database_username>',
+        'PASSWORD': '<password>',
+        'HOST': '<database_hostname_or_ip>',
+        'PORT': '<database_port>',
+     }
+    }
+  
+Django Templates:
+  - Create 'templates' directory in the project root.
+  - Add it to `settings.py`:
+    ```python
+    TEMPLATES = [
+        {
+            ...
+            'DIRS': [BASE_DIR / 'templates'],
+            ...
+        },
+    ]
+    ```
+  - Create a template file `home.html` in the templates directory:
+     html code
+  - Update the view to render the template:
+  Learning_App/views.py:
+    ```python
+    from django.shortcuts import render
+
+    def home(request):
+        return render(request, 'home.html')
+    ```
+
+Django Forms:
+  - Create a form in `Learning_App/forms.py`:
+    from django import forms
+    class Form(forms.Form):
+        title = forms.CharField(max_length=200)
+        description = forms.CharField(widget=forms.Textarea)
+        image = forms.ImageField()
+  - Update the view to handle the form:
+     Learning_App/views.py:
+    from .forms import Form
+    def vform(request):
+        context = {}
+        context['form'] = Form
+        return render(request, 'form.html', context=context)
+  - Set URL
+     path('add/', views.vform, name='vform'),
+  - Create a template `form.html` to display the form:
+     html code
+
+
+Finished
